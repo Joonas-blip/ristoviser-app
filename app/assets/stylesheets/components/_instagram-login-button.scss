@@ -1,0 +1,27 @@
+.instagram-login-button {
+    width: 70%;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    background-color: #DD2A7B;
+    border-radius: 100px;
+    transition: all 0.2s ease;
+}
+
+.instagram-login-button:hover {
+    background-color: #C4c4c4;
+}
+
+.instagram-login-button img {
+    width: 10%;
+    margin-left: 12px;
+}
+
+.instagram-login-button a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
