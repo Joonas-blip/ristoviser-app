@@ -1,0 +1,27 @@
+.email-login-button {
+    width: 70%;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 100px;
+    transition: all 0.2s ease;
+}
+
+.email-login-button:hover {
+    background-color: #C4c4c4;
+}
+
+.email-login-button img {
+    width: 10%;
+    margin-left: 12px;
+}
+
+.email-login-button a {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
