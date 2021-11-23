@@ -1,5 +1,18 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  resources :collections, only: [:index, :view, :new, :create] do #important, main point of the app
+    resources :collection_restaurants, only: :create #important
+  end
+
+  resources :restaurants, only: [:index, :view, :new, :create] do #important
+    resources :notes, only: [:new, :create] #important
+  end
+
+  resources :dashboards, only: :index #important for friendship requests
+  get '/dashboards/friends', to: 'dashboards#friends'
+  get '/dashboards/pending', to: 'dashboards#pending'
+
+  resources :friendships, only: [:new, :create, :destroy] #important outside destroy (should have)
 end
