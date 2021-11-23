@@ -1,5 +1,5 @@
 class CollectionsController < ApplicationController
-  before_action: set_collection, only: :show
+  before_action :set_collection, only: :show
 
   def index
     @collections = Collection.all

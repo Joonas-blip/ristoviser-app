@@ -1,0 +1,21 @@
+<h1><%= @collection.name %></h1>
+<br>
+<br>
+<% @collection.collection_restaurants.each do |col| %>
+  <div class="list-card-share">
+    <div class="card-image">
+      <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmVzdGF1cmFudHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="restaurant image placeholder">
+    </div>
+
+    <div class="card-details">
+      <div class="card-name-description">
+        <p><strong><%= col.restaurant.name %></strong></p>
+        <p><small><%= col.restaurant.address %> | <%= col.restaurant.phone_number %></small></p>
+      </div>
+
+      <div class="list-share-buttons">
+        <%= link_to image_tag("view.png"), restaurant_path(restaurant[col.restaurant.id]), class: "list-buttons view" %>
+        <%= link_to image_tag("share.png"), "#", class: "list-buttons" %>
+      </div>
+    </div>
+  </div>

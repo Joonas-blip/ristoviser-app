@@ -1,0 +1,9 @@
+<h1>New List</h1>
+<br>
+<br>
+<%= simple_form_for(@collection) do |f| %>
+  <%= f.input :name, placeholder: 'Enter your list name' %>
+  <%= f.label 'Set as Public' %>
+  <%= f.input :public, as: :boolean  %>
+  <%= f.button :submit, class: "button-large" %>
+<% end %>
