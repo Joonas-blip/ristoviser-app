@@ -7,5 +7,5 @@ class User < ApplicationRecord
   has_many :notes
   has_many :collections
   has_many :collection_restaurants, through: :collections
-  validates :first_name, :last_name, :location, :avatar, presence: true
+  validates :first_name, :last_name, :location, :avatar_url, presence: true
 end
