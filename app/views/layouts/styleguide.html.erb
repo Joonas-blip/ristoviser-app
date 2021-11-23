@@ -1,0 +1,122 @@
+<!-- Login Buttons (Facebook/Instagram/Email Login) -->
+
+<div class="login-buttons">
+
+  <div class="facebook-login-button">
+    <%= image_tag("facebook-logo.png") %>
+    <%= link_to "CONTINUE WITH FACEBOOK", "#" %>
+  </div>
+
+  <div class="instagram-login-button">
+    <%= image_tag("instagram-logo.png") %>
+    <%= link_to "CONTINUE WITH INSTAGRAM", "#" %>
+  </div>
+
+  <div class="email-login-button">
+    <%= image_tag("email-logo.png") %>
+    <%= link_to "CONTINUE WITH EMAIL", "#" %>
+  </div>
+
+</div>
+
+<!-- Large Button (View/Get Started/Search/Get Directions/Sign Up) -->
+
+<div class="button-large">
+  <%= link_to "VIEW", "#" %>
+</div>
+
+<!-- Navigation Bar -->
+
+<div class="navbar">
+
+  <div class="globe">
+    <a href="#"><%= image_tag("globe.png") %></a>
+  </div>
+
+  <div class="search">
+    <a href="#"><%= image_tag("search.png") %></a>
+  </div>
+
+  <div class="add">
+    <a href="#"><%= image_tag("add.png") %></a>
+  </div>
+
+  <div class="list">
+    <a href="#"><%= image_tag("list.png") %></a>
+  </div>
+
+  <div class="profile">
+    <a href="#"><%= image_tag("profile.png") %></a>
+  </div>
+
+</div>
+
+<!--Restaurant Card View -->
+
+<div class="restaurant-card-view">
+
+  <div class="card-image">
+    <%= image_tag("https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmVzdGF1cmFudHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60") %>
+  </div>
+
+  <div class="card-details">
+
+    <div class="card-name-description">
+      <p><strong>Restaurant Name</strong></p>
+      <p><small>Address | Phone Number</small></p>
+    </div>
+
+    <div class="view-button">
+      <%= link_to "VIEW", "#" %>
+    </div>
+
+  </div>
+
+</div>
+
+<!--Restaurant Card Add -->
+
+<div class="restaurant-card-add">
+
+  <div class="card-image">
+    <%= image_tag("https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmVzdGF1cmFudHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60") %>
+  </div>
+
+  <div class="card-details">
+
+    <div class="card-name-description">
+      <p><strong>Restaurant Name</strong></p>
+      <p><small>Address | Phone Number</small></p>
+    </div>
+
+    <div class="add-button">
+      <%= link_to image_tag("add.png"), "#", class: "add" %>
+    </div>
+
+  </div>
+
+</div>
+
+<!--List Card Share -->
+
+<div class="list-card-share">
+
+  <div class="card-image">
+    <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmVzdGF1cmFudHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="restaurant image placeholder">
+  </div>
+
+  <div class="card-details">
+
+    <div class="card-name-description">
+      <p><strong>Restaurant Name</strong></p>
+      <p><small>Address | Phone Number</small></p>
+    </div>
+
+    <div class="list-share-buttons">
+      <%= link_to image_tag("view.png"), "#", class: "list-buttons view" %>
+      <%= link_to image_tag("share.png"), "#", class: "list-buttons" %>
+    </div>
+
+  </div>
+
+</div>

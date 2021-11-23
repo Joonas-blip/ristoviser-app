@@ -1,0 +1,48 @@
+.list-card-share {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.card-image img {
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.card-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.card-name-description {
+    width: 60%;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.card-name-description p {
+    text-align: left !important;
+    margin-left: 15px;
+    color: black;
+    line-height: 20px;
+}
+
+.list-share-buttons {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-right: 8px;
+}
+
+.list-buttons {
+    height: 30px;
+    width: auto;
+}
+
+.view {
+    margin-left: 20px;
+}
