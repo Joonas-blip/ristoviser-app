@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  resources :collections, only: [:index, :view, :new, :create] do #important, main point of the app
-    resources :collection_restaurants, only: :create #important
+  resources :collections, only: [:index, :show, :new, :create] do #important, main point of the app
+    resources :collection_restaurants, only: [:new, :create] #important
   end
 
-  resources :restaurants, only: [:index, :view, :new, :create] do #important
+  resources :restaurants, only: [:index, :show, :new, :create] do #important
     resources :notes, only: [:new, :create] #important
   end
 
