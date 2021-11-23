@@ -5,4 +5,7 @@ class RestaurantsController < ApplicationController
     @note = Note.find_by(user: current_user, restaurant: @restaurant)
   end
 
+  def find_restaurant
+    @restaurants = Restaurants.all
+  end
 end
