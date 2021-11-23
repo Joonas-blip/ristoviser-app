@@ -1,2 +1,32 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="homepage">
+
+  <div class="homepage-heading">
+    <h1>RISTOVISER</h1>
+    <p style="font-style: italic">The only travel guide you'll ever need</p>
+  </div>
+
+  <div class="homepage-image">
+    <%= image_tag("homepage-image.jpg") %>
+  </div>
+
+  <div class="login-buttons">
+
+    <div class="facebook-login-button">
+      <%= image_tag("facebook-logo.png") %>
+      <%= link_to "CONTINUE WITH FACEBOOK", "#" %>
+    </div>
+
+    <div class="instagram-login-button">
+      <%= image_tag("instagram-logo.png") %>
+      <%= link_to "CONTINUE WITH INSTAGRAM", "#" %>
+    </div>
+
+    <div class="email-login-button">
+      <%= image_tag("email-logo.png") %>
+      <%= link_to "CONTINUE WITH EMAIL", "#" %>
+    </div>
+    <br>
+
+  </div>
+  </div>
+</div>

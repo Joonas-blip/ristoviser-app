@@ -1,1 +1,29 @@
 // Specific CSS for your home-page
+.homepage-heading {
+    margin-top: 5vh;
+}
+
+.homepage-image img {
+    height: 400px;
+    width: 100%;
+    margin: 0 auto;
+    object-fit: cover;
+    margin-top: 3vh;
+}
+
+.button-large {
+    margin-top: 8vh;
+    margin-bottom: 8vh;
+}
+
+.login-buttons {
+    margin-top: 4.5vh;
+}
+
+.facebook-login-button {
+    margin-bottom: 2vh;
+}
+
+.instagram-login-button {
+    margin-bottom: 2vh;
+}
