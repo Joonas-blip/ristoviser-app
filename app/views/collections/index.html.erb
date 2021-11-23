@@ -1,0 +1,20 @@
+<h1>Your Lists</h1>
+<br>
+<br>
+<% @collections.each do |collection| %>
+  <div class="list-card-share">
+    <div class="card-image">
+      <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmVzdGF1cmFudHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="restaurant image placeholder">
+    </div>
+
+    <div class="card-details">
+      <div class="card-name-description">
+        <p><strong><%= collection.name %></strong></p>
+      </div>
+
+      <div class="list-share-buttons">
+        <%= link_to image_tag("view.png"), collection_path(collection[:id]), class: "list-buttons view" %>
+        <%= link_to image_tag("share.png"), "#", class: "list-buttons" %>
+      </div>
+    </div>
+  </div>
