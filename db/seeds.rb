@@ -115,3 +115,18 @@ restaurant10 = Restaurant.new(
   photo: "https://vivimilano.corriere.it/wp-content/uploads/2012/02/trattoria-del-pescatore-2.jpg?v=138766"
 )
 restaurant10.save!
+
+i = 0
+restaurant = Restaurant.all
+
+5.times do
+  note = Note.new(content: 'this is very good '*5, user: User.first, restaurant: restaurant[i])
+  note.save!
+  i+=1
+end
+
+5.times do
+  note = Note.new(content: 'this is very good '*5, user: User.last, restaurant: restaurant[i])
+  note.save!
+  i+=1
+end
