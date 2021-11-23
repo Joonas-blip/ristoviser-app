@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :notes, only: [:new, :create] #important
   end
 
+
   resources :dashboards, only: :index #important for friendship requests
   get '/dashboards/friends', to: 'dashboards#friends'
   get '/dashboards/pending', to: 'dashboards#pending'
