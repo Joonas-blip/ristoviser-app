@@ -22,7 +22,7 @@
 <!-- Large Button (View/Get Started/Search/Get Directions/Sign Up) -->
 
 <div class="button-large">
-  <a href="#">View</a>
+  <%= link_to "VIEW", "#" %>
 </div>
 
 <!-- Navigation Bar -->
@@ -47,6 +47,29 @@
 
   <div class="profile">
     <a href="#"><%= image_tag("profile.png") %></a>
+  </div>
+
+</div>
+
+<!--Restaurant Card View -->
+
+<div class="restaurant-card-view">
+
+  <div class="card-image">
+    <%= image_tag("https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmVzdGF1cmFudHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60") %>
+  </div>
+
+  <div class="card-details">
+
+    <div class="card-name-description">
+      <p><strong>Restaurant Name</strong></p>
+      <p><small>Address | Phone Number</small></p>
+    </div>
+
+    <div class="view-button">
+      <%= link_to "VIEW", "#" %>
+    </div>
+
   </div>
 
 </div>
