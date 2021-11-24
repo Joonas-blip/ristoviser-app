@@ -1,5 +1,6 @@
 class CollectionsController < ApplicationController
   before_action :set_collection, only: [:show, :map]
+  skip_before_action :authenticate_user!, only: :map
 
   def index
     @collections = Collection.all
@@ -25,12 +26,19 @@ class CollectionsController < ApplicationController
 
   def map
     @restaurants = @collection.restaurants
+
+    @markers = @restaurants.geocoded.map do |restaurant|
+      {
+        lat: restaurant.latitude,
+        lng: restaurant.longitude
+      }
+    end
   end
 
   private
 
   def set_collection
-    @collection = Collection.find(params[:id])
+    @collection = Collection.find(params[:collection_id])
   end
 
   def collection_params
