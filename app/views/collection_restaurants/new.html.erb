@@ -1,7 +1,7 @@
 <h1>Add a Restaurant</h1>
 <br>
 <br>
-<%= simple_form_for(@collection_restaurant) do |f| %>
+<%= simple_form_for [@collection, @collection_restaurant] do |f| %>
   <%= f.association :restaurant, placeholder: 'Enter a restaurant name' %>
   <%= f.button :submit, class: "button-large" %>
 <% end %>
