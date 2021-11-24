@@ -16,7 +16,7 @@ class CollectionsController < ApplicationController
     @collection.user = current_user
     if @collection.save!
       flash[:notice] = 'Collection successfully created!'
-      redirect_to collection_route(@collection)
+      redirect_to collection_path(@collection)
     else
       flash[:alert] = 'Error, please fill every field'
       render :new
