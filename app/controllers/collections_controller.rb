@@ -25,6 +25,13 @@ class CollectionsController < ApplicationController
 
   def map
     @restaurants = @collection.restaurants
+
+    @markers = @restaurants.geocoded.map do |restaurant|
+      {
+        lat: restaurant.latitude,
+        lng: restaurant.longitude
+      }
+    end
   end
 
   private
