@@ -1,5 +1,5 @@
 class CollectionRestaurantsController < ApplicationController
-  before_action :set_collection
+  before_action :set_collection, only: :create
 
   def new
     @collection_restaurant = Collection_restaurant.new
