@@ -1,0 +1,23 @@
+.formdevise {
+    margin-top: 10vh;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.formlinks {
+    display: block;
+    margin: 0 auto;
+}
+
+.form-link {
+    color: white;
+}
+
+.form-check-input {
+    display: inline-flex;
+    position: static !important;
+}
+
+.form-check-input.is-valid~.form-check-label {
+    color: white !important;
+}

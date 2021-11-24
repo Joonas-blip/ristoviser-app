@@ -3,10 +3,15 @@
     height: 6vh;
     display: flex;
     align-items: center;
+    justify-content: center;
     margin: 0 auto;
     background-color: #EF626C;
     border-radius: 100px;
     transition: all 0.2s ease;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .button-large:hover {

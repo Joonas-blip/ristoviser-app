@@ -1,8 +1,11 @@
 class CollectionRestaurantsController < ApplicationController
-  before_action :set_collection
+  skip_before_action :authenticate_user! #remove after testing, problems with devise
+  before_action :set_collection, only: :create
+
 
   def new
     @collection_restaurant = CollectionRestaurant.new
+
 
 
     if params.has_key?("search")
@@ -22,6 +25,7 @@ class CollectionRestaurantsController < ApplicationController
       @restaurants = Restaurant.all
 
     end
+
   end
 
   def create
@@ -30,7 +34,7 @@ class CollectionRestaurantsController < ApplicationController
     if @collection_restaurant.save
       redirect_to collection_path(@collection)
     else
-      render :new
+      raise
     end
   end
 
@@ -56,6 +60,6 @@ class CollectionRestaurantsController < ApplicationController
   end
 
   def collection_restaurant_params
-    params.require(collection_restaurant).permit(:restaurant)
+    params.require(:collection_restaurant).permit(:restaurant_id)
   end
 end
