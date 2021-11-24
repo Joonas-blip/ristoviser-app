@@ -130,3 +130,8 @@ end
   note.save!
   i+=1
 end
+
+collection1 = Collection.new(name: 'Milan', user: User.first)
+collection1.save!
+collection_restaurants1 = CollectionRestaurant.new(collection: collection1, restaurant: restaurant1)
+collection_restaurants1.save!
