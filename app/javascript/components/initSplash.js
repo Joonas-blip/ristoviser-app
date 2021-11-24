@@ -11,7 +11,7 @@ const initAnimation = () => {
         setInterval(() => {
             splashScreen.classList.add("d-none");
             homepage.classList.add("transition-in");
-        }, 1000);
+        }, 550);
     }, 2000);
 
 }

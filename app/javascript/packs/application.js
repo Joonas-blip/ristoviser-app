@@ -8,6 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
+
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
@@ -23,13 +24,12 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import 'mapbox-gl/dist/mapbox-gl.css';
+import { initAnimation } from '../components/initSplash';
+import { initMapbox } from '../plugins/init_mapbox';
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import { initMapbox } from '../plugins/init_mapbox';
-
-import { initAnimation } from '../components/initSplash';
 
 const geoLoc = () => {
 
@@ -48,7 +48,6 @@ const btnSearch = document.querySelector("#btn-search");
 
       const url = new URL(window.location.href);
       url.searchParams.set('param1', 'val1');
-      url.searchParams.delete('param2');
       window.history.replaceState(null, null, url);
 
 
@@ -74,10 +73,7 @@ const btnSearch = document.querySelector("#btn-search");
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-
-  geoLoc();
-
-  initAnimation();
   initMapbox();
-
+  geoLoc();
+  initAnimation();
 });
