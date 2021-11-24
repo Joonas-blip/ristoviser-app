@@ -1,5 +1,5 @@
 class CollectionsController < ApplicationController
-  before_action :set_collection, only: :show
+  before_action :set_collection, only: [:show, :map]
 
   def index
     @collections = Collection.all
@@ -21,6 +21,10 @@ class CollectionsController < ApplicationController
       flash[:alert] = 'Error, please fill every field'
       render :new
     end
+  end
+
+  def map
+    @restaurants = @collection.restaurants
   end
 
   private

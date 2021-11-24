@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
+  get 'homepage', to: 'pages#home'
+
   resources :collections, only: [:index, :show, :new, :create] do #important, main point of the app
+    get "/map", to: 'collections#map', as: 'map'
     resources :collection_restaurants, only: [:new, :create] #important
   end
 

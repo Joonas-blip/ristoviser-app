@@ -1,6 +1,7 @@
 class CollectionRestaurantsController < ApplicationController
-  before_action :set_collection
   skip_before_action :authenticate_user! #remove after testing, problems with devise
+  before_action :set_collection, only: :create
+
 
   def new
     @collection_restaurant = CollectionRestaurant.new

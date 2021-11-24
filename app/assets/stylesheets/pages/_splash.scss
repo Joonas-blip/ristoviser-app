@@ -1,0 +1,75 @@
+.splashscreen {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white !important;
+}
+
+.splashscreen img {
+    height: 250px;
+    width: auto;
+}
+
+@keyframes slide {
+    100% {
+        left: 0%;
+    }
+}
+
+@-webkit-keyframes slide {
+    100% {
+        left: 0%;
+    }
+}
+
+@keyframes opacity {
+    100% {
+        opacity: 0%;
+    }
+}
+
+@-webkit-keyframes opacity {
+    100% {
+        opacity: 0%;
+    }
+}
+
+@keyframes opacityin {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* Slide In */
+
+#main-logo {
+    position: relative;
+    left: -200%;
+    -webkit-animation: slide 1.5s forwards;
+    -webkit-animation-delay: 0.5s;
+    animation: slide 1s forwards;
+    animation-delay: 0.5s;
+    animation-iteration-count: 1;
+    -webkit-animation-iteration-count: 1;
+}
+
+
+/* Opacity Out */
+
+.transition {
+    animation: opacity 0.5s;
+    animation-delay: 0.5s;
+}
+
+
+/* Opacity In */
+
+.transition-in {
+    animation: opacityin 1s;
+    animation-delay: 0s;
+}
