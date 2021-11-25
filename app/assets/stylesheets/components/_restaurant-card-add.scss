@@ -1,6 +1,7 @@
  .restaurant-card-add {
      width: 80%;
      margin: 0 auto;
+     padding-bottom: 4vh;
  }
  
  .card-image img {
@@ -16,6 +17,7 @@
      justify-content: space-between;
      background-color: white;
      border-radius: 0px 0px 10px 10px;
+     height: 6vh;
  }
  
  .card-name-description {
@@ -33,9 +35,10 @@
  
  .add-button {
      width: 25%;
+     padding-left: 5vw;
  }
  
  .add img {
-     height: 40px;
+     height: 30px;
      width: auto;
  }
