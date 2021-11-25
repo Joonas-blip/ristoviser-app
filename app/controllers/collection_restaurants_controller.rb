@@ -5,9 +5,6 @@ class CollectionRestaurantsController < ApplicationController
 
   def new
     @collection_restaurant = CollectionRestaurant.new
-
-
-
     if params.has_key?("search")
       restaurant = params["search"]["selection"]
       @restaurants = Restaurant.where("name ILIKE ?", "%#{restaurant}%")
@@ -19,13 +16,9 @@ class CollectionRestaurantsController < ApplicationController
             restaurant.save!
           end
         end
-
     else
-
       @restaurants = Restaurant.all
-
     end
-
   end
 
   def create
@@ -44,7 +37,6 @@ class CollectionRestaurantsController < ApplicationController
     base_url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input="
     query = restaurant.split
     query = query.join('%20')
-
     url = URI("#{base_url}#{query}&inputtype=textquery&fields=formatted_address%2Cname&key=AIzaSyC2Ck1pMVEYNxiPnnhDxY6iaQUV5SBmoZg")
     https = Net::HTTP.new(url.host, url.port)
     https.use_ssl = true
