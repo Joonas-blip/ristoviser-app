@@ -1,6 +1,7 @@
  .restaurant-card-view {
      width: 80%;
      margin: 0 auto;
+     padding-bottom: 4vh;
  }
  
  .card-image img {
@@ -16,6 +17,7 @@
      justify-content: space-between;
      background-color: white;
      border-radius: 0px 0px 10px 10px;
+     height: 10vh;
  }
  
  .card-name-description {
@@ -26,8 +28,9 @@
          text-align: left !important;
          margin-left: 15px;
          color: black;
-         line-height: 20px;
+         line-height: 18px;
          margin-bottom: 0;
+         font-size: 14px;
      }
  }
  
