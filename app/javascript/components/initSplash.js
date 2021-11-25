@@ -7,12 +7,13 @@ const initAnimation = () => {
     console.log(homepage);
     console.log(mainLogo);
     setInterval(() => {
+        homepage.classList.remove("d-none");
         splashScreen.classList.add("transition");
         setInterval(() => {
             splashScreen.classList.add("d-none");
             homepage.classList.add("transition-in");
-        }, 550);
-    }, 2000);
+        }, 2000);
+    }, 4000);
 
 }
 
