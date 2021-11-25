@@ -1,0 +1,13 @@
+<h1>Search for a User</h1>
+
+<%= simple_form_for :search, url: new_friendship_path, method: :get do |f| %>
+  <div class="formdevise">
+  <%= f.input :selection, placeholder: 'Search for a User' %>
+  <%= f.button :submit, class: "button-large" %>
+  </div>
+<% end %>
+
+<% @users.each do |user| %>
+  <%= image_tag(user.avatar_url) %>
+  <p><%= link_to "1 #{user.first_name} #{user.last_name}", friendships_path(user), method: :post %></p>
+<% end %>
