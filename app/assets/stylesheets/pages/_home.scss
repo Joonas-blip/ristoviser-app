@@ -1,4 +1,9 @@
 // Specific CSS for your home-page
+.homepage,
+.splashscreen {
+    margin-bottom: 0 !important;
+}
+
 .homepage-image img {
     height: 400px;
     width: 100%;
