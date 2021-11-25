@@ -1,10 +1,11 @@
 class FriendshipsController < ApplicationController
 
   def new
+    @current_user = current_user
     @friendship = Friendship.new
     if params.has_key?("search")
       user = params["search"]["selection"]
-      @users = User.where("first_name ILIKE ?", "%#{user}%")
+      @users = User.where("first_name ILIKE ? AND id != #{@current_user.id}", "%#{user}%")
     else
       @users = User.all
     end

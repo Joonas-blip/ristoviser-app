@@ -8,6 +8,9 @@
 <% end %>
 
 <% @users.each do |user| %>
-  <%= image_tag(user.avatar_url) %>
-  <p><%= link_to "1 #{user.first_name} #{user.last_name}", friendships_path(user), method: :post %></p>
+  <% if user.id != @current_user.id %>
+    <p><%= image_tag(user.avatar_url) %></p>
+    <p><%= link_to "#{user.first_name} #{user.last_name}" %></p>
+    <%= link_to "Add friend", friendships_path(user), method: :post, class: "button-large" %>
+  <% end %>
 <% end %>
