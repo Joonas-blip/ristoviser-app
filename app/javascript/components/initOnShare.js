@@ -16,7 +16,6 @@ const initOnShare = () => {
         /*
           Show a message if the user shares something
         */
-        alert(`Thanks for Sharing!`);
       } catch (err) {
         /*
           This error will appear if the user cancels the action of sharing.
