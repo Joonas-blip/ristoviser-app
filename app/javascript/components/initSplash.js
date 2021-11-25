@@ -1,3 +1,5 @@
+// Please do not change!!!!
+
 const splashScreen = document.querySelector(".splashscreen");
 const homepage = document.querySelector(".homepage");
 const mainLogo = document.querySelector("#main-logo");

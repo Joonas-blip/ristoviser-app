@@ -1,6 +1,6 @@
 <h1><%= @collection.name %></h1>
 <br>
-<%= button_to "Add a new Place", new_collection_collection_restaurant_path(@collection), class: "button-large", method: :get %>
+<%= link_to "Add a new Place", new_collection_collection_restaurant_path(@collection), class: "button-large" %>
 <br>
 <% @collection.restaurants.each do |col| %>
   <div class="list-card-share">

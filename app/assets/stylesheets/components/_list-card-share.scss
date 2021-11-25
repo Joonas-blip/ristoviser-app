@@ -6,6 +6,7 @@
 .card-image img {
     height: 180px;
     object-fit: cover;
+    width: 100%;
     border-radius: 10px 10px 0px 0px;
 }
 
@@ -21,13 +22,13 @@
     width: 60%;
     margin-top: 12px;
     margin-bottom: 12px;
-}
-
-.card-name-description p {
-    text-align: left !important;
-    margin-left: 15px;
-    color: black;
-    line-height: 20px;
+    p {
+        text-align: left !important;
+        margin-left: 15px;
+        color: black;
+        line-height: 20px;
+        margin-bottom: 0;
+    }
 }
 
 .list-share-buttons {
@@ -38,7 +39,7 @@
     margin-right: 8px;
 }
 
-.list-buttons {
+.list-buttons img {
     height: 30px;
     width: auto;
 }
