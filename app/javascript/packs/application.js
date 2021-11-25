@@ -29,6 +29,7 @@ import { initAnimation } from '../components/initSplash';
 import 'mapbox-gl/dist/mapbox-gl.css';
 // internal imports
 import { initMapbox } from '../plugins/init_mapbox';
+import { initOnShare } from '../components/initOnShare';
 
 
 
@@ -80,4 +81,5 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   geoLoc();
   initAnimation();
+  initOnShare();
 });

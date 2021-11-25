@@ -15,7 +15,9 @@
 
       <div class="list-share-buttons">
         <%= link_to image_tag("view.png"), collection_path(collection[:id]), class: "list-buttons view" %>
-        <%= link_to image_tag("share.png"), "#", class: "list-buttons" %>
+        <div id="share-button" class="list-buttons">
+          <%= image_tag("share.png") %>
+        </div>
       </div>
     </div>
   </div>
