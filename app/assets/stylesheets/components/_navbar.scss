@@ -1,16 +1,17 @@
 .navbar {
-    width: 100%;
+    width: 100vw;
     height: 8vh;
     display: flex;
     background-color: #312f2f;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     overflow: hidden;
     position: fixed;
     bottom: 0;
     left: 0;
     text-align: center;
-    padding-bottom: 2vh;
+    padding-bottom: 1vh;
+    padding-top: 1vh;
 }
 
 .navbar img {
