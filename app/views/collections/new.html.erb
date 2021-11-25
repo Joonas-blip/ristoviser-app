@@ -2,8 +2,10 @@
 <br>
 <br>
 <%= simple_form_for(@collection) do |f| %>
-  <%= f.input :name, placeholder: 'Enter your list name' %>
-  <%= f.label 'Set as Public' %>
+<div class="formdevise">
+  <%= f.input :name, placeholder: 'Enter List Name' %>
+  <%= f.label 'Set As Public' %>
   <%= f.input :public, as: :boolean  %>
-  <%= f.button :submit, class: "button-large" %>
+  <%= f.button :submit, class: "button-large", style: "width: 60vw;" %>
+</div>
 <% end %>
