@@ -50,26 +50,22 @@
 #main-logo {
     position: relative;
     left: -200%;
-    -webkit-animation: slide 1.5s forwards;
-    -webkit-animation-delay: 0.5s;
-    animation: slide 1s forwards;
-    animation-delay: 0.5s;
-    animation-iteration-count: 1;
-    -webkit-animation-iteration-count: 1;
+    animation: slide 2s forwards;
+    animation-delay: 1s;
 }
 
 
 /* Opacity Out */
 
 .transition {
-    animation: opacity 0.5s;
-    animation-delay: 0.5s;
+    animation: opacity 2s;
+    animation-delay: 0s;
 }
 
 
 /* Opacity In */
 
 .transition-in {
-    animation: opacityin 1s;
+    animation: opacityin 2s;
     animation-delay: 0s;
 }
