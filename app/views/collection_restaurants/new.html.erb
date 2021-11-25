@@ -1,13 +1,14 @@
 <h1>Add a Restaurant</h1>
 <br>
-<br>
 
 <%= simple_form_for :search, url: new_collection_collection_restaurant_path, method: :get,  html: { id: :search } do |f| %>
+  <div class="formdevise">
   <%= f.input :selection, placeholder: 'Select a restaurant name', input_html: { id: 'query'} %>
   <%= f.button :submit, class: "button-large",  id: 'btn-search' %>
+</div>
 <% end %>
-<br>
-<br>
+
+
 
 <% @restaurants.each do |rest|  %>
   <div class="restaurant-card-add">
