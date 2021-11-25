@@ -18,5 +18,10 @@ Rails.application.routes.draw do
   get '/dashboards/friends', to: 'dashboards#friends'
   get '/dashboards/pending', to: 'dashboards#pending'
 
-  resources :friendships, only: [:new, :create, :destroy] #important outside destroy (should have)
+  resources :friendships, only: [:new, :create, :destroy] do #important outside destroy (should have)
+    member do
+        get '/confirm', to: 'friendships#confirm'
+        get '/reject', to: 'friendships#reject'
+      end
+  end
 end
