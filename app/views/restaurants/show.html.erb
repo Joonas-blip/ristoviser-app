@@ -8,6 +8,6 @@
     <p><%= @note.content%></p>
   </div>
   <div class="button-large">
-    <%= button_to "Get Directions", "https://www.google.com/maps/dir/?api=1&destination=" + @restaurant.name.gsub(" ", "+"), class: "button-large" %>
+    <%= button_to "Get Directions", "https://www.google.com/maps/dir/?api=1&destination=" + @restaurant.name.gsub(" ", "+"), class: "button-large", form: {target: '_blank'} %>
   </div>
 </div>
