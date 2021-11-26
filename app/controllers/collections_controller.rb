@@ -3,7 +3,8 @@ class CollectionsController < ApplicationController
   skip_before_action :authenticate_user!, only: :map
 
   def index
-    @collections = Collection.all
+    @user = current_user
+    @collections = Collection.where("user_id = #{@user.id}")
   end
 
   def show; end
