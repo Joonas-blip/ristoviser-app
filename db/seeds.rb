@@ -20,18 +20,19 @@ User.create(email: 'user1@mail.com', password: '123456', first_name: 'John', las
 user2 = User.create(email: 'user2@mail.com', password: '123456', first_name: 'Davide', last_name: 'Oldani', avatar_url: 'https://picsum.photos/50/50', location: "Milan")
 puts '2 users created'
 
-i = 3
+i = 4
 20.times do
+  puts i
   user = User.new(
     email: "user#{i}@mail.com",
     password: '123456',
-    first_name:Faker::Name.first_name,
-    last_name:Faker::Name.last_name,
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
     avatar_url: 'https://picsum.photos/50/50',
     location: ['Milan', 'Paris'].sample
   )
-  i += 1
   user.save!
+  i += 1
 end
 
 restaurant1 = Restaurant.new(
@@ -243,11 +244,6 @@ restaurant = Restaurant.all
   i+=1
 end
 
-5.times do
-  note = Note.new(content: 'this is very good '*5, user: User.last, restaurant: restaurant[i])
-  note.save!
-  i+=1
-end
 
 collection1 = Collection.new(name: 'Milan', user: User.first)
 collection1.save!
@@ -255,8 +251,8 @@ collection1.save!
 collection_restaurants1 = CollectionRestaurant.new(collection: collection1, restaurant: restaurant1)
 collection_restaurants1.save!
 
-x = User.first.id
-6.times do
+x = User.first.id + 1
+2.times do
   friendship_x = Friendship.new(user: User.first, friend_id: User.find(x).id, status: "confirmed")
   friendship_x.save!
   friendship_y = Friendship.new(user: User.find(x), friend_id: User.first.id, status: "confirmed")
