@@ -1,0 +1,16 @@
+<div class="restaurant-show">
+  <h3><%= @restaurant.name %></h3>
+  <p class="restaurant-address"><%= @restaurant.street_address %></p>
+  <div class="restaurant-image">
+    <img src="<%= @restaurant.photo %>"  alt="restaurant image placeholder">
+  </div>
+  <br>
+  <p>Add a note</p>
+  <%= simple_form_for [@restaurant, @note] do |f| %>
+    <div class="formdevise">
+      <%= f.input :content, placeholder: 'Notes' %>
+      <%= hidden_field_tag "format", @collection.id %>
+      <%= f.button :submit, class: "button-large", style: "width: 60vw;" %>
+    </div>
+  <% end %>
+</div>

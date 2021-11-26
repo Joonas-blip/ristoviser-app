@@ -2,7 +2,6 @@ class CollectionRestaurantsController < ApplicationController
   skip_before_action :authenticate_user! #remove after testing, problems with devise
   before_action :set_collection, only: :new
 
-
   def new
     @collection_restaurant = CollectionRestaurant.new
     if params.has_key?("search")
@@ -54,5 +53,6 @@ class CollectionRestaurantsController < ApplicationController
     @collection = Collection.find(params[:collection_id])
   end
 
-  def collection_restaurant_params; end
+  def collection_restaurant_params
+  end
 end
