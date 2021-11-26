@@ -1,14 +1,14 @@
  <div class="navbar">
         <div class="globe">
-            <a href="#"><%= image_tag("globe.png") %></a>
+          <%= link_to image_tag("globe.png"), "#"  %>
         </div>
         <div class="search">
-            <a href="#"><%= image_tag("search.png") %></a>
+          <%= link_to image_tag("search.png"), collections_path  %>
         </div>
-        <div class="list">
-            <a href="#"><%= image_tag("add-list.png") %></a>
+        <div class="add-list">
+          <%= link_to image_tag("add-list.png"), new_collection_path  %>
         </div>
         <div class="profile">
-            <a href="#"><%= image_tag("profile.png") %></a>
+          <%= link_to image_tag("profile.png"), dashboards_path  %>
         </div>
     </div>

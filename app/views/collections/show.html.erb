@@ -1,7 +1,7 @@
 <h1><%= @collection.name %></h1>
-
-<%= link_to "Add a new Place", new_collection_collection_restaurant_path(@collection), class: "button-large" %>
-
+<br>
+<%= link_to "Add A new Place", new_collection_collection_restaurant_path(@collection), class: "button-large" %>
+<br>
 <% @collection.restaurants.each do |col| %>
   <div class="restaurant-card-view">
     <div class="card-image">
