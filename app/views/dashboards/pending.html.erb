@@ -1,7 +1,14 @@
-<h1>Your pending requests</h1>
+<div class="friendships-page">
+<h1>Your Pending Requests</h1>
 
+<div class="profile-container">
 <% @friends.each do |user| %>
+<div class="profile-card">
   <p><%= image_tag(user.avatar_url) %></p>
   <p><%= "#{user.first_name} #{user.last_name}" %></p>
+  <p class="friend-location"><%= user.location %></p>
   <%= link_to "✓", confirm_friendship_path(user) %>
+  </div>
 <% end %>
+</div>
+</div>
