@@ -1,0 +1,23 @@
+<div class="your-profile">
+<h1>Your Profile</h1>
+<div class="profile-details-container">
+<div class="profile-avatar">
+  <p><%= image_tag(@user.avatar_url) %></p>
+</div>
+<div class="profile-details">
+    <p><strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
+  <p><%= pluralize(@user.collections.count, 'directory')%></p>
+</div>
+</div>
+<div class="button-large">
+  <%= link_to "View Full Profile", "#" %>
+</div>
+<div class="profile-links">
+<h3>Friends</h3>
+<p> <%= link_to "Add a Friend", new_friendship_path %></p>
+<p> <%= link_to "See Pending Requests", dashboards_pending_path %></p>
+<p> <%= link_to "All Friends", dashboards_friends_path %></p>
+<h3>Account</h3>
+<p> <%= link_to "Account Settings" %></p>
+</div>
+</div>

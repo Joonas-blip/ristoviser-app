@@ -1,5 +1,4 @@
 class RestaurantsController < ApplicationController
-  skip_before_action :authenticate_user! #remove after testing, problems with devise
 
   def show
     @restaurant = Restaurant.find(params[:id])
