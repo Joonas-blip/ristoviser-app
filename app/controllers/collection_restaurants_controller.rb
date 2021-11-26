@@ -53,5 +53,6 @@ class CollectionRestaurantsController < ApplicationController
     @collection = Collection.find(params[:collection_id])
   end
 
-  def collection_restaurant_params; end
+  def collection_restaurant_params
+  end
 end
