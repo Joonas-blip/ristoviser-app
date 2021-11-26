@@ -1,0 +1,67 @@
+.friendships-page {
+    min-height: 100vh;
+    h1 {
+        font-size: 32px;
+        width: 80%;
+        text-align: center;
+        letter-spacing: 3px;
+        margin: 0 auto;
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+    }
+}
+
+.search-friend {
+    font-size: 12px;
+    margin-bottom: 5vh;
+}
+
+.profile-container {
+    width: 100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.profile-card {
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+    display: block;
+    background-color: white;
+    min-width: 46%;
+    max-width: 46%;
+    max-height: 24vh;
+    line-height: 20px;
+    border-radius: 10px;
+    p {
+        margin-bottom: 0;
+        font-weight: 500;
+    }
+    img {
+        margin-bottom: 2vh;
+        margin-top: 2vh;
+        border-radius: 50%;
+    }
+}
+
+.friend-location {
+    font-weight: 300 !important;
+    font-size: 12px;
+}
+
+.send-request {
+    border-top: 1px solid #ebebeb;
+    letter-spacing: 1px;
+    margin-top: 2vh;
+    height: 5vh;
+    line-height: 5vh;
+    border-radius: 0 0 10px 10px;
+    a {
+        color: black;
+        font-weight: 300;
+        text-decoration: none;
+    }
+    a:hover {
+        color: #c4c4c4;
+    }
+}
