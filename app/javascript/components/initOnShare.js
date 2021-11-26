@@ -3,9 +3,7 @@ const initOnShare = () => {
   if (shareButton) {
     shareButton.addEventListener("click", (event) => {
       const title = document.title;
-      const url = shareButton.href
-        ? document.querySelector(collection_path(collection.id)).href
-        : document.location.href;
+      const url = shareButton.dataset.url;
       try {
         navigator
           .share({
