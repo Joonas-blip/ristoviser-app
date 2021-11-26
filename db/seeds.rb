@@ -16,8 +16,21 @@ Restaurant.destroy_all
 puts "every data is destroyed"
 
 User.create(email: 'user1@mail.com', password: '123456', first_name: 'John', last_name: 'Doe', avatar_url: 'https://picsum.photos/50/50', location: "Milan")
-User.create(email: 'user2@mail.com', password: '123456', first_name: 'Davide', last_name: 'Oldani', avatar_url: 'https://picsum.photos/50/50', location: "Milan")
+user2 = User.create(email: 'user2@mail.com', password: '123456', first_name: 'Davide', last_name: 'Oldani', avatar_url: 'https://picsum.photos/50/50', location: "Milan")
 puts '2 users created'
+
+20.times do
+  i = 3
+  User.create(
+    email: "user#{i}@mail.com",
+    password: '123456',
+    first_name:Faker::Name.first_name,
+    last_name:Faker::Name.last_name,
+    avatar_url: 'https://picsum.photos/50/50',
+    location: ['Milan', 'Paris'].sample
+  )
+  i += 1
+end
 
 restaurant1 = Restaurant.new(
   name: "Al Garghet",
@@ -119,6 +132,106 @@ restaurant10 = Restaurant.new(
 )
 restaurant10.save!
 
+restaurant11 = Restaurant.new(
+  name: "Les Deux Magots",
+  street_address: "6 Pl. Saint-Germain des Prés 36",
+  city: "Paris",
+  country: "France",
+  phone_number: "+33 1 45 48 55 25",
+  photo: "https://storage.googleapis.com/yk-cdn/photos/pdp/vutheara-kham/paris-by-night-les-deux-magots-paris.jpg"
+)
+restaurant11.save!
+
+restaurant12 = Restaurant.new(
+  name: "La Rotonde",
+  street_address: "105 Bd du Montparnasse",
+  city: "Paris",
+  country: "France",
+  phone_number: "+33 1 43 26 48 26",
+  photo: "https://resize.marianne.net/r/1540,924/img/var/LQ3019545C/380053/rotonde.jpeghttp://www.santamarialanave.com/wp-content/uploads/2016/06/Plateau-di-ostriche-e-ricci.jpeg"
+)
+restaurant12.save!
+
+restaurant13 = Restaurant.new(
+  name: "Pink Mamma",
+  street_address: "20bis Rue de Douai",
+  city: "Paris",
+  country: "France",
+  phone_number: "+33 1 47 42 33 31",
+  photo: "https://www.redline-boutique.com/wp/wp-content/uploads/2017/06/redline-blog-pink-mamma-restaurant-paris.png"
+)
+restaurant13.save!
+
+restaurant14 = Restaurant.new(
+  name: "Restaurant Diep",
+  street_address: "55 Rue Pierre Charron",
+  city: "Paris",
+  country: "France",
+  phone_number: "+33 1 45 63 52 76",
+  photo: "https://lh3.googleusercontent.com/p/AF1QipNaJGIfGZHm_lBkYCT5wi6ofrZOEIP3gyhm6azN=s1280-p-no-v1"
+)
+restaurant14.save!
+
+restaurant15 = Restaurant.new(
+  name: "Le Relais de l'Entrecôte Marbeuf",
+  street_address: "15 Rue Marbeuf",
+  city: "Paris",
+  country: "France",
+  phone_number: "+33 1 49 52 07 17",
+  photo: "https://media-cdn.tripadvisor.com/media/photo-s/05/30/4b/a0/le-relais-de-l-entrecote.jpg"
+)
+restaurant15.save!
+
+restaurant16 = Restaurant.new(
+  name: "Aux Crus de Bourgogne",
+  street_address: "3 Rue Bachaumont",
+  city: "Paris",
+  country: "France",
+  phone_number: "+33 1 42 33 48 24",
+  photo:"https://1.bp.blogspot.com/-YlUssWERvzY/YOcu1le4UFI/AAAAAAABaiI/DchOLp73bHIW4PowtdRKpQ5Ihrglc8orQCLcBGAsYHQ/s800/aux-crus-de-bourgogne-restaurant-brasserie-rue-bachaumont-montorgueil-paris-2-1.JPG"
+)
+restaurant16.save!
+
+restaurant17 = Restaurant.new(
+  name: "Bouillon Pigalle",
+  street_address: "22 Bd de Clichy",
+  city: "Paris",
+  country: "France",
+  phone_number: "+33 1 42 59 69 31",
+  photo: "https://www.bouillon-chartier.com/chartier_contents/uploads/2019/07/bouillon-chartier-grands-boulevards-canard.jpg"
+)
+restaurant17.save!
+
+restaurant18 = Restaurant.new(
+  name: "Balagan Paris",
+  street_address: "9 Rue d'Alger",
+  city: "Paris",
+  country: "France",
+  phone_number: "+33 1 40 20 72 14",
+  photo: "http://www.balagan-paris.com/thumbs/home/row-1/20170522_balagan_plates_test_0070_v2_v2-1000-8d7354ce25b8.jpg"
+)
+restaurant18.save!
+
+restaurant19 = Restaurant.new(
+  name: "Marco Polo",
+  street_address: "1 Rue Saint-Sulpice,",
+  city: "Paris",
+  country: "France",
+  phone_number: "+33 1 43 26 79 63",
+  photo: "https://www.restaurant-marcopolo.com/wa_p_albums/p_album_jd31msnc0/jd31kr3q1dtor5osyo/mp285.jpg"
+)
+restaurant19.save!
+
+restaurant10 = Restaurant.new(
+  name: "La Piadina",
+  street_address: "31 Rue d'Anjou",
+  city: "Paris",
+  country: "France",
+  phone_number: "+33 1 42 66 17 11",
+  photo: "https://www.italiachiamaitalia.it/wp-content/uploads/2021/05/piadina-salame.jpg"
+)
+restaurant10.save!
+
 i = 0
 restaurant = Restaurant.all
 
@@ -136,5 +249,27 @@ end
 
 collection1 = Collection.new(name: 'Milan', user: User.first)
 collection1.save!
+
 collection_restaurants1 = CollectionRestaurant.new(collection: collection1, restaurant: restaurant1)
 collection_restaurants1.save!
+
+  friendship1 = Friendship.new(user: User.first, friend_id: User.last.id, status: "pending")
+  friendship2 = Friendship.new(user: User.last, friend_id: User.first.id, status: "pending")
+  friendship3 = Friendship.new(user: User.first, friend_id: user2.id, status: "accepted")
+  friendship4 = Friendship.new(user: user2, friend_id: User.first.id, status: "accepted")
+  friendship5 = Friendship.new(user: User.first, friend_id: User.find(5).id, status: "accepted")
+  friendship6 = Friendship.new(user: User.find(5), friend_id: User.first.id, status: "accepted")
+  friendship7 = Friendship.new(user: User.first, friend_id: User.find(7).id, status: "accepted")
+  friendship8 = Friendship.new(user: User.find(7), friend_id: User.first.id, status: "accepted")
+  friendship9 = Friendship.new(user: User.first, friend_id: User.find(9).id, status: "accepted")
+  friendship10 = Friendship.new(user: User.find(9), friend_id: User.first.id, status: "accepted")
+  friendship11 = Friendship.new(user: User.first, friend_id: User.find(11).id, status: "accepted")
+  friendship12 = Friendship.new(user: User.find(11), friend_id: User.first.id, status: "accepted")
+  friendship13 = Friendship.new(user: User.first, friend_id: User.find(14).id, status: "accepted")
+  friendship14 = Friendship.new(user: User.find(14), friend_id: User.first.id, status: "accepted")
+  friendship15 = Friendship.new(user: User.first, friend_id: User.find(17).id, status: "accepted")
+  friendship16 = Friendship.new(user: User.find(17), friend_id: User.first.id, status: "accepted")
+  friendship17 = Friendship.new(user: User.first, friend_id: User.find(18).id, status: "pending")
+  friendship18 = Friendship.new(user: User.find(18), friend_id: User.first.id, status: "pending")
+  friendship19 = Friendship.new(user: User.first, friend_id: User.find(20).id, status: "accepted")
+  friendship20 = Friendship.new(user: User.find(20), friend_id: User.first.id, status: "accepted")
