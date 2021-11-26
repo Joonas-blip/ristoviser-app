@@ -1,5 +1,6 @@
 class CollectionRestaurantsController < ApplicationController
-  before_action :set_collection, only: :create
+  skip_before_action :authenticate_user! #remove after testing, problems with devise
+  before_action :set_collection, only: :new
 
   def new
     @collection_restaurant = CollectionRestaurant.new
@@ -20,12 +21,15 @@ class CollectionRestaurantsController < ApplicationController
   end
 
   def create
-    @collection_restaurant = CollectionRestaurant.new(collection_restaurant_params)
-    @collection_restaurant.collection = @collection
-    if @collection_restaurant.save
-      redirect_to collection_path(@collection)
+    collection = Collection.find(params[:collection_id])
+    restaurant = Restaurant.find(params[:format])
+    @collection_restaurant = CollectionRestaurant.new(collection: collection, restaurant: restaurant)
+    if Note.where("user_id = #{current_user.id} AND restaurant_id = #{restaurant.id}").exists?
+      @collection_restaurant.save!
+      redirect_to collection_path(collection)
     else
-      raise
+      redirect_to new_restaurant_note_path(restaurant, collection.id)
+      @collection_restaurant.save!
     end
   end
 
@@ -49,7 +53,5 @@ class CollectionRestaurantsController < ApplicationController
     @collection = Collection.find(params[:collection_id])
   end
 
-  def collection_restaurant_params
-    params.require(:collection_restaurant).permit(:restaurant_id)
-  end
+  def collection_restaurant_params; end
 end
