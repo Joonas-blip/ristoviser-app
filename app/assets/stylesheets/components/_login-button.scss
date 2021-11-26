@@ -1,0 +1,48 @@
+.login-button {
+    width: 70%;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 auto;
+    border-radius: 100px;
+    transition: all 0.2s ease;
+    margin-bottom: 2vh;
+}
+
+.login-button:hover {
+    background-color: #C4c4c4;
+}
+
+.login-button img {
+    width: 10%;
+    margin-left: 15px;
+}
+
+.login-button a {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 5vw;
+}
+
+.facebook {
+    background-color: #3b5998;
+}
+
+.facebook a,
+.instagram a {
+    color: white;
+}
+
+.instagram {
+    background-color: #DD2A7B;
+}
+
+.email {
+    background-color: white;
+}
+
+.email a {
+    color: black;
+}

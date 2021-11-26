@@ -17,17 +17,17 @@
 
   <div class="login-buttons">
 
-    <div class="facebook-login-button">
-      <%= image_tag("facebook-logo.png") %>
-      <%= link_to "CONTINUE WITH FACEBOOK", "#" %>
+    <div class="login-button facebook">
+        <%= image_tag("facebook-logo.png") %>
+        <%= link_to "CONTINUE WITH FACEBOOK", "#" %>
     </div>
 
-    <div class="instagram-login-button">
+    <div class="login-button instagram">
       <%= image_tag("instagram-logo.png") %>
       <%= link_to "CONTINUE WITH INSTAGRAM", "#" %>
     </div>
 
-    <div class="email-login-button">
+    <div class="login-button email">
       <%= image_tag("email-logo.png") %>
       <%= link_to "CONTINUE WITH EMAIL", collections_path %> <%# new_user_session_path when devise problem is fixed %>
     </div>
