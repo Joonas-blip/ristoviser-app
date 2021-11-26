@@ -1,6 +1,8 @@
 class DashboardsController < ApplicationController
 
-  def index; end
+  def index
+   @user = current_user
+  end
 
   def friends
     @friendships = Friendship.all
