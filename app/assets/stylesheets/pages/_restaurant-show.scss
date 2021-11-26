@@ -1,0 +1,27 @@
+.restaurant-show {
+    background-color: white;
+    min-height: 100vh;
+    h3 {
+        color: black;
+        padding-top: 5vh;
+        font-weight: 300;
+        width: 80%;
+        margin: 0 auto;
+        padding-bottom: 2vh;
+    }
+    img {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+.restaurant-address {
+    margin-bottom: 3vh;
+}
+
+.restaurant-description {
+    width: 80%;
+    text-align: justify;
+    margin: 0 auto;
+    padding-top: 3vh;
+}
