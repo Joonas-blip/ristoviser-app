@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require "open-uri"
+Friendship.destroy_all
 CollectionRestaurant.destroy_all
 Collection.destroy_all
 Note.destroy_all
@@ -19,9 +20,9 @@ User.create(email: 'user1@mail.com', password: '123456', first_name: 'John', las
 user2 = User.create(email: 'user2@mail.com', password: '123456', first_name: 'Davide', last_name: 'Oldani', avatar_url: 'https://picsum.photos/50/50', location: "Milan")
 puts '2 users created'
 
+i = 3
 20.times do
-  i = 3
-  User.create(
+  user = User.new(
     email: "user#{i}@mail.com",
     password: '123456',
     first_name:Faker::Name.first_name,
@@ -30,6 +31,7 @@ puts '2 users created'
     location: ['Milan', 'Paris'].sample
   )
   i += 1
+  user.save!
 end
 
 restaurant1 = Restaurant.new(
@@ -253,23 +255,18 @@ collection1.save!
 collection_restaurants1 = CollectionRestaurant.new(collection: collection1, restaurant: restaurant1)
 collection_restaurants1.save!
 
-  friendship1 = Friendship.new(user: User.first, friend_id: User.last.id, status: "pending")
-  friendship2 = Friendship.new(user: User.last, friend_id: User.first.id, status: "pending")
-  friendship3 = Friendship.new(user: User.first, friend_id: user2.id, status: "accepted")
-  friendship4 = Friendship.new(user: user2, friend_id: User.first.id, status: "accepted")
-  friendship5 = Friendship.new(user: User.first, friend_id: User.find(5).id, status: "accepted")
-  friendship6 = Friendship.new(user: User.find(5), friend_id: User.first.id, status: "accepted")
-  friendship7 = Friendship.new(user: User.first, friend_id: User.find(7).id, status: "accepted")
-  friendship8 = Friendship.new(user: User.find(7), friend_id: User.first.id, status: "accepted")
-  friendship9 = Friendship.new(user: User.first, friend_id: User.find(9).id, status: "accepted")
-  friendship10 = Friendship.new(user: User.find(9), friend_id: User.first.id, status: "accepted")
-  friendship11 = Friendship.new(user: User.first, friend_id: User.find(11).id, status: "accepted")
-  friendship12 = Friendship.new(user: User.find(11), friend_id: User.first.id, status: "accepted")
-  friendship13 = Friendship.new(user: User.first, friend_id: User.find(14).id, status: "accepted")
-  friendship14 = Friendship.new(user: User.find(14), friend_id: User.first.id, status: "accepted")
-  friendship15 = Friendship.new(user: User.first, friend_id: User.find(17).id, status: "accepted")
-  friendship16 = Friendship.new(user: User.find(17), friend_id: User.first.id, status: "accepted")
-  friendship17 = Friendship.new(user: User.first, friend_id: User.find(18).id, status: "pending")
-  friendship18 = Friendship.new(user: User.find(18), friend_id: User.first.id, status: "pending")
-  friendship19 = Friendship.new(user: User.first, friend_id: User.find(20).id, status: "accepted")
-  friendship20 = Friendship.new(user: User.find(20), friend_id: User.first.id, status: "accepted")
+x = User.first.id
+6.times do
+  friendship_x = Friendship.new(user: User.first, friend_id: User.find(x).id, status: "confirmed")
+  friendship_x.save!
+  friendship_y = Friendship.new(user: User.find(x), friend_id: User.first.id, status: "confirmed")
+  friendship_y.save!
+  x += 1
+end
+2.times do
+  friendship6 = Friendship.new(user: User.find(x), friend_id: User.first.id, status: "pending")
+  friendship6.save!
+  friendship7 = Friendship.new(user: User.first, friend_id: User.find(x).id, status: "pending")
+  friendship7.save!
+  x += 1
+end
