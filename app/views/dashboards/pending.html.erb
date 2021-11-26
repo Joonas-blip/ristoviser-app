@@ -1,0 +1,7 @@
+<h1>Your pending requests</h1>
+
+<% @friends.each do |user| %>
+  <p><%= image_tag(user.avatar_url) %></p>
+  <p><%= "#{user.first_name} #{user.last_name}" %></p>
+  <%= link_to "✓", confirm_friendship_path(user) %>
+<% end %>
