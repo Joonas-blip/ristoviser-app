@@ -1,11 +1,16 @@
 <div class="friendships-page">
 <h1>All Friends</h1>
 
+<div class="profile-container">
 <% @friends.each do |user| %>
-<div class="profile-card"></div>
+<div class="profile-card">
   <p><%= image_tag(user.avatar_url) %></p>
   <p><%= "#{user.first_name} #{user.last_name}" %></p>
-</div>
+  <p class="friend-location"><%= user.location %></p>
+  <div class="send-request">
+  <%= link_to "See profile", "#" %>
+  </div>
+  </div>
 <% end %>
-
+</div>
 </div>
