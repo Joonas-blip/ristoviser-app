@@ -17,7 +17,7 @@ Restaurant.destroy_all
 puts "every data is destroyed"
 
 User.create(email: 'user1@mail.com', password: '123456', first_name: 'John', last_name: 'Doe', avatar_url: 'https://picsum.photos/50/50', location: "Milan")
-user2 = User.create(email: 'user2@mail.com', password: '123456', first_name: 'Davide', last_name: 'Oldani', avatar_url: 'https://picsum.photos/50/50', location: "Milan")
+User.create(email: 'user2@mail.com', password: '123456', first_name: 'Davide', last_name: 'Oldani', avatar_url: 'https://picsum.photos/50/50', location: "Milan")
 puts '2 users created'
 
 i = 3
