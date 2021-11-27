@@ -20,7 +20,7 @@ User.create(email: 'user1@mail.com', password: '123456', first_name: 'John', las
 user2 = User.create(email: 'user2@mail.com', password: '123456', first_name: 'Davide', last_name: 'Oldani', avatar_url: 'https://picsum.photos/50/50', location: "Milan")
 puts '2 users created'
 
-i = 4
+i = 3
 20.times do
   puts i
   user = User.new(
@@ -246,18 +246,18 @@ collection1.save!
 collection_restaurants1 = CollectionRestaurant.new(collection: collection1, restaurant: restaurant1)
 collection_restaurants1.save!
 
-# x = User.first.id + 1
-# 2.times do
-#   friendship_x = Friendship.new(user: User.first, friend_id: User.find(x).id, status: "confirmed")
-#   friendship_x.save!
-#   friendship_y = Friendship.new(user: User.find(x), friend_id: User.first.id, status: "confirmed")
-#   friendship_y.save!
-#   x += 1
-# end
-# 2.times do
-#   friendship6 = Friendship.new(user: User.find(x), friend_id: User.first.id, status: "pending")
-#   friendship6.save!
-#   friendship7 = Friendship.new(user: User.first, friend_id: User.find(x).id, status: "pending")
-#   friendship7.save!
-#   x += 1
-# end
+x = User.first.id + 1
+2.times do
+  friendship_x = Friendship.new(user: User.first, friend_id: User.find(x).id, status: "confirmed")
+  friendship_x.save!
+  friendship_y = Friendship.new(user: User.find(x), friend_id: User.first.id, status: "confirmed")
+  friendship_y.save!
+  x += 1
+end
+2.times do
+  friendship6 = Friendship.new(user: User.find(x), friend_id: User.first.id, status: "pending")
+  friendship6.save!
+  friendship7 = Friendship.new(user: User.first, friend_id: User.find(x).id, status: "pending")
+  friendship7.save!
+  x += 1
+end
