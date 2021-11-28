@@ -4,10 +4,10 @@
     h3 {
         color: black;
         padding-top: 5vh;
-        font-weight: 300;
+        font-weight: 400;
         width: 80%;
         margin: 0 auto;
-        padding-bottom: 2vh;
+        padding-bottom: 1vh;
     }
     img {
         width: 80%;
@@ -17,6 +17,10 @@
 
 .restaurant-address {
     margin-bottom: 3vh;
+    p {
+        font-weight: 100;
+        margin-bottom: 0;
+    }
 }
 
 .restaurant-description {
@@ -24,4 +28,20 @@
     text-align: justify;
     margin: 0 auto;
     padding-top: 3vh;
+    margin-bottom: 3vh;
+}
+
+.back {
+    padding-top: 2vh;
+    padding-left: 10vw;
+    float: left;
+    text-decoration: none;
+}
+
+.white a {
+    color: white;
+}
+
+.black a {
+    color: black;
 }

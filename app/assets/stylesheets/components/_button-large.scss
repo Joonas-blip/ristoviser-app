@@ -12,17 +12,11 @@
     color: white;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 3vh;
-    margin-top: 3vh;
-}
-
-.button-large:hover {
-    background-color: #C4c4c4;
-}
-
-.button-large a {
-    text-decoration: none;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    margin-bottom: 5vh;
+    a {
+        text-decoration: none !important;
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
 }
