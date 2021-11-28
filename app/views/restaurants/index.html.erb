@@ -1,0 +1,28 @@
+<h1>Search</h1>
+
+<%= simple_form_for :search, url: restaurants_path, method: :get,  html: { id: :search } do |f| %>
+  <div class="formdevise">
+  <%= f.input :selection, placeholder: 'Select a restaurant name', input_html: { id: 'query'} %>
+  <%= f.button :submit, class: "button-large",  id: 'btn-search' %>
+  </div>
+<% end %>
+
+<% @user_restaurants.each do |restaurant| %>
+  <div class="restaurant-card-view">
+    <div class="card-image">
+      <img src="<%= restaurant.photo %>" alt="restaurant image placeholder">
+    </div>
+
+    <div class="card-details">
+      <div class="card-name-description">
+        <p><strong><%= restaurant.name %></strong></p>
+        <p><small><%= restaurant.address %></small></p>
+        <p><small><%= restaurant.phone_number %></small></p>
+      </div>
+
+      <div class="view-button">
+        <%= link_to "VIEW", restaurant_path(restaurant)%>
+      </div>
+    </div>
+  </div>
+<% end %>

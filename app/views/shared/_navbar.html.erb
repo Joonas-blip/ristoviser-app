@@ -1,12 +1,12 @@
  <div class="navbar">
         <div class="globe">
-          <%= link_to image_tag("globe.png"), "#"  %>
+          <%= link_to image_tag("globe.png"), collection_map_path(1)  %>
         </div>
         <div class="search">
-          <%= link_to image_tag("search.png"), collections_path  %>
+          <%= link_to image_tag("search.png"), restaurants_path %>
         </div>
         <div class="add-list">
-          <%= link_to image_tag("add-list.png"), new_collection_path  %>
+          <%= link_to image_tag("add-list.png"), collections_path  %>
         </div>
         <div class="profile">
           <%= link_to image_tag("profile.png"), dashboards_path  %>

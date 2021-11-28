@@ -24,6 +24,7 @@ gem 'redis', '~> 4.0'
 gem "uri"
 gem "net-http"
 gem 'json'
+gem 'faker'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
