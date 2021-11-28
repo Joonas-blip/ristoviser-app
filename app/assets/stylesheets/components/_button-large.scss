@@ -1,6 +1,6 @@
 .button-large {
     width: 70%;
-    height: 6vh;
+    height: 5vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,6 +13,7 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 5vh;
+    font-size: 12px !important;
     a {
         text-decoration: none !important;
         color: white;
