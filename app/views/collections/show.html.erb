@@ -1,7 +1,10 @@
+<p class="back white", style="color: white !important;"><%= link_to "Back", collections_path %></p>
+<br>
+
 <h1><%= @collection.name %></h1>
-<br>
+
 <%= link_to "Add A new Place", new_collection_collection_restaurant_path(@collection), class: "button-large" %>
-<br>
+
 <% @collection.restaurants.each do |col| %>
   <div class="restaurant-card-view">
     <div class="card-image">
@@ -10,14 +13,10 @@
 
     <div class="card-details">
       <div class="card-name-description">
-        <p><strong><%= col.name %></strong></p>
-        <p><small><%= col.address %></small></p>
-        <p><small><%= col.phone_number %></small></p>
+        <p><strong><%= link_to col.name, restaurant_path(col) %></strong></p>
       </div>
 
-      <div class="view-button">
-        <%= link_to "VIEW", restaurant_path(col)%>
-      </div>
+
     </div>
   </div>
 <% end %>

@@ -1,6 +1,14 @@
 <div class="restaurant-show">
+<div class="back black">
+  <p><%= link_to "Back", collection_path %></p>
+</div>
+<br>
   <h3><%= @restaurant.name %></h3>
-  <p class="restaurant-address"><%= @restaurant.street_address %></p>
+  <div class="restaurant-address">
+    <small><p><%= @restaurant.street_address %></p>
+    <p><%= @restaurant.phone_number %></p></small>
+  </div>
+
   <div class="restaurant-image">
     <img src="<%= @restaurant.photo %>"  alt="restaurant image placeholder">
   </div>
@@ -8,7 +16,7 @@
   <div>
     <p class="restaurant-description"><%= @note.content %></p>
   </div>
-  <div class="button-large directions">
+  <div class="directions">
     <%= link_to "Get Directions", "https://www.google.com/maps/dir/?api=1&destination=" + @restaurant.name.gsub(" ", "+"), class: "button-large" %>
   </div>
   <br>

@@ -1,7 +1,7 @@
 <h1>Your Lists</h1>
-<br>
-<%= link_to "Add a new List", new_collection_path, class: "button-large" %>
-<br>
+
+<%= link_to "Create A New List", new_collection_path, class: "button-large" %>
+
 
 <% @collections.each do |collection| %>
   <div class="list-card-share">
@@ -11,11 +11,10 @@
 
     <div class="card-details" style="height: 7vh;">
       <div class="card-name-description">
-        <p style="font-size: 18px; letter-spacing: 1px;"><strong><%= collection.name %></strong></p>
+        <p style="font-size: 18px; letter-spacing: 1px;"><strong><%= link_to collection.name, collection_path(collection[:id]) %></strong></p>
       </div>
 
       <div class="list-share-buttons">
-        <%= link_to image_tag("view.png"), collection_path(collection[:id]), class: "list-buttons view" %>
         <div id="share-button" class="list-buttons" data-url="<%= "#{request.original_url}/#{collection.id}" %>">
           <%= image_tag("share.png") %>
         </div>
