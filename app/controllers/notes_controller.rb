@@ -12,6 +12,7 @@ class NotesController < ApplicationController
     if @note.save!
       redirect_to collection_path(@collection)
     else
+      flash[:alert] = 'Error, please fill every field'
       render :new
     end
   end

@@ -15,4 +15,19 @@
       <p ><%= pluralize(@user.collections.count, 'list')%></p>
     </div>
   </div>
+  <br>
+  <br>
+  <% @collections.each do |collection| %>
+    <div class="list-card-share">
+      <div class="card-image">
+        <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmVzdGF1cmFudHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="restaurant image placeholder">
+      </div>
+
+      <div class="card-details" style="height: 7vh;">
+        <div class="card-name-description">
+          <p style="font-size: 18px; letter-spacing: 1px;"><strong><%= link_to collection.name, collection_path(collection[:id]) %></strong></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>

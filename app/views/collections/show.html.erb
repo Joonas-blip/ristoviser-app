@@ -1,9 +1,16 @@
-<p class="back black", style="color:  !important;"><%= link_to "Back", collections_path %></p>
+<% if @collection.user == current_user %>
+  <p class="back black", style="color: black !important;"><%= link_to "Back", collections_path %></p>
+<% else %>
+  <p class="back black", style="color: black !important;"><%= link_to "Back", profile_path(@collection.user) %></p>
+<% end %>
+
 <br>
 
 <h1 style="margin-bottom: 5vh;"><%= @collection.name %></h1>
 
-<%= link_to "Add A new Place", new_collection_collection_restaurant_path(@collection), class: "button-large" %>
+<% if @collection.user == current_user %>
+  <%= link_to "Add A new Place", new_collection_collection_restaurant_path(@collection), class: "button-large" %>
+<% end %>
 
 <% @collection.restaurants.each do |col| %>
   <div class="restaurant-card-view">
@@ -15,8 +22,6 @@
       <div class="card-name-description">
         <p><strong><%= link_to col.name, restaurant_path(col) %></strong></p>
       </div>
-
-
     </div>
   </div>
 <% end %>
