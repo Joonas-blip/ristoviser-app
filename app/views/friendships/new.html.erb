@@ -3,38 +3,39 @@
 <br>
 
 <div class="friendships-page">
-<h1 style="margin-bottom: 5vh;">Find Friends</h1>
+  <h1 style="margin-bottom: 5vh;">Find Friends</h1>
 
-<%= simple_form_for :search, url: new_friendship_path, method: :get do |f| %>
-  <div class="formdevise friend-search-container">
-  <%= f.input :search, placeholder: 'Enter Name' %>
-  <%= f.button :submit, 'Search for User', class: "button-large search-friend" %>
-  </div>
-<% end %>
-
-<div class="profile-container">
-<% @users.each do |user| %>
-  <% if user.id != @current_user.id %>
-  <div class="profile-card">
-
-    <%= image_tag(user.avatar_url) %>
-    <p><%= "#{user.first_name} #{user.last_name}" %></p>
-    <p class="friend-location"><%= user.location %></p>
-      <% if current_user.friend_of?(user) %>
-        <div class="send-request">
-          <%= link_to 'See Profile', "#" %>
-        </div>
-      <% elsif current_user.friends('pending').include? user %>
-        <div class="send-request">
-          <%= link_to 'Pending Request', '#' %>
-        </div>
-      <% else%>
-        <div class="send-request">
-          <%= link_to 'Add Friend', friendships_path(user), method: :post %>
-        </div>
-  </div>
+  <%= simple_form_for :search, url: new_friendship_path, method: :get do |f| %>
+    <div class="formdevise friend-search-container">
+      <%= f.input :search, placeholder: 'Enter Name' %>
+      <%= f.button :submit, 'Search for User', class: "button-large search-friend" %>
+    </div>
   <% end %>
-<% end %>
 
-</div>
+  <div class="profile-container">
+    <% @users.each do |user| %>
+      <% if user.id != @current_user.id %>
+        <div class="profile-card">
+
+          <%= image_tag(user.avatar_url) %>
+          <p><%= "#{user.first_name} #{user.last_name}" %></p>
+          <p class="friend-location"><%= user.location %></p>
+          <% if current_user.friend_of?(user) %>
+            <div class="send-request">
+              <%= link_to 'See Profile', profile_path(user) %>
+            </div>
+          <% elsif current_user.friends('pending').include? user %>
+            <div class="send-request">
+              <%= link_to 'Pending Request', dashboards_pending_path %>
+            </div>
+          <% else %>
+            <div class="send-request">
+              <%= link_to 'Add Friend', friendships_path(user), method: :post %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+
+  </div>
 </div>
