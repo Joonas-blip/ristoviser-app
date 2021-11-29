@@ -261,3 +261,15 @@ end
   friendship7.save!
   x += 1
 end
+
+friend_coll = Collection.new(user: User.find(2), name: 'Great Chefs', public: true)
+friend_coll.save!
+puts 'friend collection created'
+
+friend_rest = CollectionRestaurant.new(restaurant: restaurant8, collection: friend_coll)
+friend_rest.save!
+puts 'added restaurant to collection'
+
+friend_note = Note.new(user: User.find(2), restaurant: restaurant8, content: 'The best chef in Milan')
+friend_note.save!
+puts 'added comment to restaurant'
