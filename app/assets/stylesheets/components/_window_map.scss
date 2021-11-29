@@ -1,6 +1,7 @@
 .mapboxgl-popup-content {
   border-radius: 8px !important;
   height: 250px;
+  background-color: rgba(167, 167, 167, .5) !important;
 }
 
 .image_window {
@@ -9,12 +10,17 @@
   border-radius: 8px !important;
 }
 
+.view-button-map {
+     margin: 0 auto;
+     width: 50%;
+}
+
 .title-infobox {
   font-size: 25px;
   padding-top: 2vh;
   letter-spacing: 2px;
   margin-bottom: 15px !important;
-  color: black !important ;
+  color: white !important ;
 }
 
 // .button-map {
