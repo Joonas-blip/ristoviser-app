@@ -1,4 +1,7 @@
-<h1 style="margin-bottom: 5vh;">Explore Restaurants</h1>
+<div>
+  <h1 style="margin-bottom: 5vh;">Explore Restaurants</h1>
+  <button id="map-view">Map View!</button>
+</div>
 
 <%= simple_form_for :search, url: restaurants_path, method: :get,  html: { id: :search } do |f| %>
   <div class="formdevise">
@@ -7,6 +10,8 @@
   </div>
 <% end %>
 
+<div>
+<div id='toggle-cards'>
 <% @user_restaurants.each do |restaurant| %>
   <div class="restaurant-card-view">
     <div class="card-image">
@@ -20,3 +25,8 @@
     </div>
   </div>
 <% end %>
+</div>
+<div id='toggle-map' class="hide">
+  <%= render 'shared/map' %>
+</div>
+</div>

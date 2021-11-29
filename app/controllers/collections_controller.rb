@@ -35,19 +35,6 @@ class CollectionsController < ApplicationController
     end
   end
 
-  def map
-    @collection = Collection.find(params[:collection_id])
-    @restaurants = @collection.restaurants
-
-    @markers = @restaurants.geocoded.map do |restaurant|
-      {
-        lat: restaurant.latitude,
-        lng: restaurant.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { restaurant: restaurant })
-      }
-    end
-  end
-
   private
 
   def set_collection

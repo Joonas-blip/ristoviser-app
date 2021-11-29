@@ -4,15 +4,16 @@
   <p class="back white", style="color: white !important;"><%= link_to "Back", profile_path(@collection.user) %></p>
 <% end %>
 <br>
-
-<h1 style="margin-bottom: 5vh;"><%= @collection.name %></h1>
-
+<div>
+  <h1 style="margin-bottom: 5vh;"><%= @collection.name %></h1>
+  <button id="map-view">Map View!</button>
+</div>
 <% if @collection.user == current_user %>
   <%= link_to "Add A new Place", new_collection_collection_restaurant_path(@collection), class: "button-large" %>
 <% end %>
 
 <div >
-  <div id='toggle-cards' style= ''>
+  <div id='toggle-cards'>
     <% @collection.restaurants.each do |col| %>
       <div class="restaurant-card-view">
         <div class="card-image">
@@ -27,7 +28,9 @@
       </div>
     <% end %>
   </div>
-  <div id='toggle-map' style= 'display:none;'>
+
+  <div id='toggle-map' class="hide">
     <%= render 'shared/map' %>
   </div>
+
 </div>
