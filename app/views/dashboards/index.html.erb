@@ -1,16 +1,13 @@
 <div class="your-profile">
   <h1>Your Profile</h1>
-  <div class="dashboard-container">
-    <div class="profile-avatar">
-      <p><%= image_tag(@user.avatar_url) %></p>
-    </div>
-    <div class="profile-details">
-      <p><strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
-      <p><%= pluralize(@user.collections.count, 'list')%></p>
-    </div>
+
+  <div class="profile-avatar-big">
+    <p><%= image_tag(@user.avatar_url) %></p>
   </div>
-  <br>
-  <br>
+  <div class="name-list">
+    <p><strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
+    <p><%= pluralize(@user.collections.count, 'list')%></p>
+  </div>
   <div class="profile-links">
     <h3>Friends</h3>
     <p> <%= link_to "Search Friends", new_friendship_path %></p>
@@ -18,5 +15,6 @@
     <p> <%= link_to "All Friends", dashboards_friends_path %></p>
     <h3>Account</h3>
     <p> <%= link_to "Account Settings" %></p>
+    <p>Log Out </p>
   </div>
 </div>
