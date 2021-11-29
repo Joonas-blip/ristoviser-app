@@ -1,10 +1,14 @@
+<p class="back white"><%= link_to "Back", dashboards_path %></p>
+<br>
+<br>
+
 <div class="friendships-page">
-<h1 style="margin-bottom: 5vh;">Search for a User</h1>
+<h1 style="margin-bottom: 5vh;">Find Friends</h1>
 
 <%= simple_form_for :search, url: new_friendship_path, method: :get do |f| %>
   <div class="formdevise friend-search-container">
-  <%= f.input :selection, placeholder: 'Search for a User' %>
-  <%= f.button :submit, 'Search', class: "button-large search-friend" %>
+  <%= f.input :search, placeholder: 'Enter Name' %>
+  <%= f.button :submit, 'Search for User', class: "button-large search-friend" %>
   </div>
 <% end %>
 
@@ -12,6 +16,7 @@
 <% @users.each do |user| %>
   <% if user.id != @current_user.id %>
   <div class="profile-card">
+
     <%= image_tag(user.avatar_url) %>
     <p><%= "#{user.first_name} #{user.last_name}" %></p>
     <p class="friend-location"><%= user.location %></p>
@@ -27,7 +32,6 @@
         <div class="send-request">
           <%= link_to 'Add Friend', friendships_path(user), method: :post %>
         </div>
-      <% end %>
   </div>
   <% end %>
 <% end %>

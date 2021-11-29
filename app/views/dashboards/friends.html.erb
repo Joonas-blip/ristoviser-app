@@ -1,16 +1,26 @@
+<p class="back white"><%= link_to "Back", dashboards_path %></p>
+<br>
+<br>
+
 <div class="friendships-page">
 <h1 style="margin-bottom: 5vh;">All Friends</h1>
 
 <div class="profile-container">
-  <% @friends.each do |user| %>
-  <div class="profile-card">
+
+<% @friends.each do |user| %>
+<div class="profile-card">
+  <div class="profile-avatar">
     <p><%= image_tag(user.avatar_url) %></p>
-    <p style="padding-bottom: 2vh;"><%= "#{user.first_name} #{user.last_name}" %></p>
-    <p class="friend-location"><%= user.location %></p>
-    <div class="send-request">
-      <%= link_to "See profile", "#" %>
-    </div>
   </div>
-  <% end %>
+  <div class="profile-details">
+    <p style="padding-left: 5vw !important;"><%= "#{user.first_name} #{user.last_name}" %></p>
+    <p style="padding-left: 5vw !important;" class="friend-location"><%= user.location %></p>
+  </div>
+  <div class="send-request">
+  <%= link_to "View", "#", class: "button-large", id: "friendship-view" %>
+  </div>
+</div>
+<% end %>
+
 </div>
 </div>

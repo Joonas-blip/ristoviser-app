@@ -1,8 +1,8 @@
-<h1 style="margin-bottom: 5vh;">Search</h1>
+<h1 style="margin-bottom: 5vh;">Explore Restaurants</h1>
 
 <%= simple_form_for :search, url: restaurants_path, method: :get,  html: { id: :search } do |f| %>
   <div class="formdevise">
-  <%= f.input :selection, placeholder: 'Select a restaurant name', input_html: { id: 'query'} %>
+  <%= f.input :Search, placeholder: 'Find A Restaurant', input_html: { id: 'query'} %>
   <%= f.button :submit, class: "button-large",  id: 'btn-search' %>
   </div>
 <% end %>
@@ -15,11 +15,7 @@
 
     <div class="card-details">
       <div class="card-name-description">
-        <p><strong><%= restaurant.name %></strong></p>
-      </div>
-
-      <div class="view-button">
-        <%= link_to "VIEW", restaurant_path(restaurant)%>
+        <p><strong><%= link_to restaurant.name, restaurant_path(restaurant) %></strong></p>
       </div>
     </div>
   </div>

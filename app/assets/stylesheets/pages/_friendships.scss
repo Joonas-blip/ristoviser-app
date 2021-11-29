@@ -7,7 +7,6 @@
         letter-spacing: 3px;
         margin: 0 auto;
         padding-top: 5vh;
-        padding-bottom: 5vh;
     }
 }
 
@@ -21,23 +20,21 @@
 }
 
 .profile-card {
-    margin-top: 0.5vh;
     margin-bottom: 2vh;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+    height: 10vh;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-left: 3vw;
+    padding-right: 3vw;
     background-color: white;
     width: 90%;
-    max-height: 24vh;
-    line-height: 20px;
     border-radius: 10px;
     p {
         margin-bottom: 0;
         font-weight: 500;
     }
     img {
-        margin-bottom: 2vh;
-        margin-top: 2vh;
         border-radius: 50%;
     }
 }
@@ -47,19 +44,32 @@
     font-size: 12px;
 }
 
+.profile-details {
+    width: 60%;
+    p {
+        text-align: left !important;
+        padding-right: 10vw;
+    }
+}
+
 .send-request {
-    border-top: 1px solid #ebebeb;
-    letter-spacing: 1px;
-    margin-top: 2vh;
-    height: 5vh;
-    line-height: 5vh;
-    border-radius: 0 0 10px 10px;
-    a {
-        color: black;
-        font-weight: 300;
-        text-decoration: none;
+    img {
+        width: 10vw;
     }
-    a:hover {
-        color: #c4c4c4;
+    .button-large {
+        width: 20vw;
+        margin: 0;
+        height: 4vh;
     }
+}
+
+#friendship-view {
+    font-size: 10px !important;
+    text-decoration: none;
+}
+
+.confirm,
+.delete {
+    color: #7e7e7e;
+    font-size: 16px;
 }
