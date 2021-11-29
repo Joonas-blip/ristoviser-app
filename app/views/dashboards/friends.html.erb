@@ -1,21 +1,24 @@
+<p class="back white"><%= link_to "Back", dashboards_path %></p>
+<br>
+<br>
+
 <div class="friendships-page">
 <h1 style="margin-bottom: 5vh;">All Friends</h1>
 
 <div class="profile-container">
 <% @friends.each do |user| %>
 <div class="profile-card">
-  <p><%= image_tag(user.avatar_url) %></p>
-<<<<<<< HEAD
-  <p style="padding-bottom: 2vh;"><%= "#{user.first_name} #{user.last_name}" %></p>
-</div>
-=======
-  <p><%= "#{user.first_name} #{user.last_name}" %></p>
-  <p class="friend-location"><%= user.location %></p>
+  <div class="profile-avatar">
+    <p><%= image_tag(user.avatar_url) %></p>
+  </div>
+  <div class="profile-details">
+    <p style="padding-right: 20vw !important;"><%= "#{user.first_name} #{user.last_name}" %></p>
+    <p style="padding-right: 20vw !important;" class="friend-location"><%= user.location %></p>
+  </div>
   <div class="send-request">
-  <%= link_to "See profile", "#" %>
+  <%= link_to "View", "#", class: "button-large", id: "friendship-view" %>
   </div>
-  </div>
->>>>>>> 86d3b68d21e2b545cd870a2c68ef81e91cbd869e
+</div>
 <% end %>
 </div>
 </div>
