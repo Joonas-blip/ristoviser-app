@@ -9,6 +9,9 @@
       <p><%= pluralize(@user.collections.count, 'list')%></p>
     </div>
   </div>
+  <div class="button-large">
+    <%= link_to "View Full Profile", "#" %>
+  </div>
   <div class="profile-links">
     <h3>Friends</h3>
     <p> <%= link_to "Search Friends", new_friendship_path %></p>
