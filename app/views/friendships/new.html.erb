@@ -16,16 +16,22 @@
 <% @users.each do |user| %>
   <% if user.id != @current_user.id %>
   <div class="profile-card">
-    <div class="profile-avatar">
-        <%= image_tag(user.avatar_url) %>
-    </div>
-    <div class="profile-details">
-        <p><%= "#{user.first_name} #{user.last_name}" %></p>
-        <p class="friend-location"><%= user.location %></p>
-    </div>
-    <div class="send-request">
-      <%= link_to image_tag("add.png"), friendships_path(user), method: :post %>
-    </div>
+
+    <%= image_tag(user.avatar_url) %>
+    <p><%= "#{user.first_name} #{user.last_name}" %></p>
+    <p class="friend-location"><%= user.location %></p>
+      <% if current_user.friend_of?(user) %>
+        <div class="send-request">
+          <%= link_to 'See Profile', "#" %>
+        </div>
+      <% elsif current_user.friends('pending').include? user %>
+        <div class="send-request">
+          <%= link_to 'Pending Request', '#' %>
+        </div>
+      <% else%>
+        <div class="send-request">
+          <%= link_to 'Add Friend', friendships_path(user), method: :post %>
+        </div>
   </div>
   <% end %>
 <% end %>
