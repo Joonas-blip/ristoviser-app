@@ -4,10 +4,11 @@ class RestaurantsController < ApplicationController
   def index
     @user = current_user
     @user_restaurants = CollectionRestaurant.where(collection: Collection.where(user: @user).pluck(:id)).pluck(:restaurant_id).map {|r| Restaurant.find(r) }.uniq
-    # if params.has_key?("search")
-    #   query = params["search"]["selection"]
-    #   @user_restaurants = @user_restaurants.select { |restaurant| (restaurant.name.include?(query.downcase) || restaurant.address.include?(query.downcase)) }
-    # end
+    if params.has_key?("search")
+      query = params["search"]["Search"]
+      pattern = /\A#{query.downcase}.*|\s#{query.downcase}.*/
+      @user_restaurants = @user_restaurants.select { |restaurant| restaurant.name.downcase =~ pattern || restaurant.address.downcase =~ pattern }
+    end
   end
 
   def show
