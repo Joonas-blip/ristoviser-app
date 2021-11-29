@@ -4,36 +4,6 @@
      padding-bottom: 4vh;
  }
  
- .card-image img {
-     height: 180px;
-     object-fit: cover;
-     border-radius: 10px 10px 0px 0px;
-     width: 100%;
- }
- 
- .card-details {
-     display: flex;
-     align-items: center;
-     justify-content: space-between;
-     background-color: white;
-     border-radius: 0px 0px 10px 10px;
-     height: 7vh;
- }
- 
- .card-name-description {
-     width: 70%;
-     margin-top: 12px;
-     margin-bottom: 12px;
-     p {
-         text-align: left !important;
-         margin-left: 15px;
-         color: black;
-         line-height: 18px;
-         margin-bottom: 0;
-         font-size: 14px;
-     }
- }
- 
  .add-button {
      width: 25%;
  }

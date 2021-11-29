@@ -1,5 +1,4 @@
 .friendships-page {
-    min-height: 100vh;
     h1 {
         font-size: 32px;
         width: 80%;
@@ -20,7 +19,8 @@
 }
 
 .profile-card {
-    margin-bottom: 2vh;
+    margin-bottom: 3vh;
+    padding-bottom: 3vh;
     height: 10vh;
     display: inline-flex;
     align-items: center;
@@ -29,7 +29,7 @@
     padding-right: 3vw;
     background-color: white;
     width: 90%;
-    border-radius: 10px;
+    border-bottom: 1px solid lightgray;
     p {
         margin-bottom: 0;
         font-weight: 500;
@@ -49,6 +49,7 @@
     p {
         text-align: left !important;
         padding-right: 10vw;
+        padding-left: 3vw;
     }
 }
 
@@ -60,16 +61,23 @@
         width: 20vw;
         margin: 0;
         height: 4vh;
-        font-size: 8px !important;
     }
     .view {
-        background-color: black !important;
+        background-color: white !important;
+        border: 1px solid black;
+        color: black !important;
     }
     .pending {
-        background-color: #868686 !important;
+        background-color: white !important;
+        border: 1px solid grey;
+        color: grey !important;
     }
     a {
         text-decoration: none !important;
+    }
+    .confirm {
+        margin-bottom: 1vh;
+        color: white;
     }
 }
 
@@ -77,10 +85,4 @@
     font-size: 10px !important;
     text-decoration: none !important;
     color: white;
-}
-
-.confirm,
-.delete {
-    color: #7e7e7e;
-    font-size: 16px;
 }

@@ -4,22 +4,6 @@
      padding-bottom: 4vh;
  }
  
- .card-image img {
-     height: 180px;
-     object-fit: cover;
-     border-radius: 10px 10px 0px 0px;
-     width: 100%;
- }
- 
- .card-details {
-     display: flex;
-     align-items: center;
-     justify-content: space-between;
-     background-color: white;
-     border-radius: 0px 0px 10px 10px;
-     height: 7vh;
- }
- 
  .card-name-description {
      width: 70%;
      margin-top: 12px;
@@ -33,22 +17,4 @@
          font-size: 18px;
          text-decoration: none;
      }
- }
- 
- .view-button {
-     margin-right: 15px;
-     width: 25%;
-     background-color: #EF626C;
-     border-radius: 100px;
-     height: 3vh;
-     display: flex;
-     align-items: center;
-     justify-content: center;
- }
- 
- .view-button a {
-     text-decoration: none;
-     color: white;
-     letter-spacing: 1px;
-     text-transform: uppercase;
  }

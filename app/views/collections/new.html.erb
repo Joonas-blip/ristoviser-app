@@ -1,11 +1,16 @@
+<p class="back black", style="color: black !important;"><%= link_to "Back", collections_path %></p>
+<br>
+
 <h1>New List</h1>
 <br>
 <br>
 <%= simple_form_for(@collection) do |f| %>
 <div class="formdevise">
   <%= f.input :name, placeholder: 'Enter List Name' %>
-  <%= f.label 'Set As Public' %>
+  <br>
+  <%= f.label 'Set As Public', class: "label-capitalize" %>
   <%= f.input :public, as: :boolean  %>
+  <br>
   <%= f.button :submit, class: "button-large", style: "width: 60vw;" %>
 </div>
 <% end %>

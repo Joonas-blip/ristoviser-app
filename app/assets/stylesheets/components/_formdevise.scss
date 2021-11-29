@@ -1,8 +1,8 @@
 .formdevise {
     margin-top: 10vh;
-    width: 70%;
+    width: 60vw;
     margin: 0 auto;
-    color: white;
+    color: black;
 }
 
 .formlinks {
@@ -11,7 +11,7 @@
 }
 
 .form-link {
-    color: white;
+    color: black;
 }
 
 .form-check-input {
@@ -20,5 +20,27 @@
 }
 
 .form-check-input.is-valid~.form-check-label {
-    color: white !important;
+    color: black !important;
+}
+
+abbr {
+    display: none;
+}
+
+.form-check-label {
+    margin-left: 3vw;
+    font-weight: 100;
+    letter-spacing: 0.2px;
+}
+
+.label-capitalize {
+    text-transform: capitalize;
+    letter-spacing: 0.3px;
+}
+
+.textarea {
+    width: 60vw;
+    margin-bottom: 3vh;
+    height: 150px;
+    font-size: 12px;
 }
