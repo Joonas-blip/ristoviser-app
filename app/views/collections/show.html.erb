@@ -11,16 +11,23 @@
   <%= link_to "Add A new Place", new_collection_collection_restaurant_path(@collection), class: "button-large" %>
 <% end %>
 
-<% @collection.restaurants.each do |col| %>
-  <div class="restaurant-card-view">
-    <div class="card-image">
-      <img src="<%= col.photo %>" alt="restaurant image placeholder">
-    </div>
+<div >
+  <div id='toggle-cards' style= ''>
+    <% @collection.restaurants.each do |col| %>
+      <div class="restaurant-card-view">
+        <div class="card-image">
+          <img src="<%= col.photo %>" alt="restaurant image placeholder">
+        </div>
 
-    <div class="card-details">
-      <div class="card-name-description">
-        <p><strong><%= link_to col.name, restaurant_path(col) %></strong></p>
+        <div class="card-details">
+          <div class="card-name-description">
+            <p><strong><%= link_to col.name, restaurant_path(col) %></strong></p>
+          </div>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
-<% end %>
+  <div id='toggle-map' style= 'display:none;'>
+    <%= render 'shared/map' %>
+  </div>
+</div>
