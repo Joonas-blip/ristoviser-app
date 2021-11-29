@@ -6,12 +6,7 @@
     justify-content: flex-start;
     margin: 0 auto;
     border-radius: 100px;
-    transition: all 0.2s ease;
     margin-bottom: 2vh;
-}
-
-.login-button:hover {
-    background-color: #C4c4c4;
 }
 
 .login-button img {
@@ -41,6 +36,7 @@
 
 .email-signin {
     background-color: white;
+    border: 1px solid black;
 }
 
 .email-signin a {
