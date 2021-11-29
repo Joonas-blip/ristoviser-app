@@ -20,6 +20,7 @@
 }
 
 .profile-card {
+    margin-bottom: 2vh;
     height: 10vh;
     display: inline-flex;
     align-items: center;
@@ -44,9 +45,10 @@
 }
 
 .profile-details {
+    width: 60%;
     p {
         text-align: left !important;
-        padding-right: 30vw;
+        padding-right: 10vw;
     }
 }
 
@@ -64,4 +66,10 @@
 #friendship-view {
     font-size: 10px !important;
     text-decoration: none;
+}
+
+.confirm,
+.delete {
+    color: #7e7e7e;
+    font-size: 16px;
 }
