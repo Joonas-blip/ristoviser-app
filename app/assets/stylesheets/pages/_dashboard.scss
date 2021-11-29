@@ -1,4 +1,5 @@
 .your-profile {
+    text-align: center;
     min-height: 100vh;
     background-color: white;
     h1 {
@@ -17,18 +18,19 @@
 }
 
 .dashboard-container {
-    width: 60%;
+    width: 100%;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    display: block;
+    margin: 0 auto;
+    text-align: center !important;
     p {
         margin-bottom: 0;
         text-align: left;
     }
 }
 
-.profile-avatar img {
+.profile-avatar-big img {
+    width: 80px;
     border-radius: 50%;
 }
 
@@ -45,5 +47,12 @@
     a:hover {
         color: #c4c4c4;
         text-decoration: none;
+    }
+}
+
+.name-list {
+    text-align: center;
+    p {
+        margin-bottom: 0;
     }
 }
