@@ -15,11 +15,7 @@
 
     <div class="card-details">
       <div class="card-name-description">
-        <p><strong><%= restaurant.name %></strong></p>
-      </div>
-
-      <div class="view-button">
-        <%= link_to "VIEW", restaurant_path(restaurant)%>
+        <p><strong><%= link_to restaurant.name, restaurant_path(restaurant) %></strong></p>
       </div>
     </div>
   </div>
