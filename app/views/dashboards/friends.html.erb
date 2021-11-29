@@ -3,6 +3,7 @@
 <br>
 
 <div class="friendships-page">
+
 <h1 style="margin-bottom: 5vh;">All Friends</h1>
 
 <div class="profile-container">
@@ -17,7 +18,7 @@
     <p style="padding-left: 5vw !important;" class="friend-location"><%= user.location %></p>
   </div>
   <div class="send-request">
-  <%= link_to "View", "#", class: "button-large", id: "friendship-view" %>
+  <%= link_to "View", profile_path(user), class: "button-large", id: "friendship-view" %>
   </div>
 </div>
 <% end %>
