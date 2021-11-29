@@ -60,12 +60,23 @@
         width: 20vw;
         margin: 0;
         height: 4vh;
+        font-size: 8px !important;
+    }
+    .view {
+        background-color: black !important;
+    }
+    .pending {
+        background-color: #868686 !important;
+    }
+    a {
+        text-decoration: none !important;
     }
 }
 
 #friendship-view {
     font-size: 10px !important;
-    text-decoration: none;
+    text-decoration: none !important;
+    color: white;
 }
 
 .confirm,
