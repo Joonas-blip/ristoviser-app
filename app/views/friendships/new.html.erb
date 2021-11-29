@@ -15,9 +15,19 @@
     <%= image_tag(user.avatar_url) %>
     <p><%= "#{user.first_name} #{user.last_name}" %></p>
     <p class="friend-location"><%= user.location %></p>
-    <div class="send-request">
-      <%= link_to 'Add Friend', friendships_path(user), method: :post %>
-    </div>
+      <% if current_user.friend_of?(user) %>
+        <div class="send-request">
+          <%= link_to 'See Profile', "#" %>
+        </div>
+      <% elsif current_user.friends('pending').include? user %>
+        <div class="send-request">
+          <%= link_to 'Pending Request', '#' %>
+        </div>
+      <% else%>
+        <div class="send-request">
+          <%= link_to 'Add Friend', friendships_path(user), method: :post %>
+        </div>
+      <% end %>
   </div>
   <% end %>
 <% end %>

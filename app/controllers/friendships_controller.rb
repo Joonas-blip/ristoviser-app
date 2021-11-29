@@ -7,7 +7,7 @@ class FriendshipsController < ApplicationController
       user = params["search"]["selection"]
       @users = User.where("first_name ILIKE ? AND id != #{@current_user.id}", "%#{user}%")
     else
-      @users = User.all
+      @users = User.where("id != #{@current_user.id}")
     end
   end
 
