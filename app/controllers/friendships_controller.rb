@@ -13,9 +13,15 @@ class FriendshipsController < ApplicationController
 
   def create
     @friendship_asker = Friendship.new(user: current_user, friend_id: params[:format])
-    @friendship_asker.save!
+    unless @friendship_asker.save!
+      flash[:alert] = "User doesn't exist"
+      render :new
+    end
     @friendship_receiver = Friendship.new(user: User.find(params[:format]), friend_id: current_user.id)
-    @friendship_receiver.save!
+    unless @friendship_receiver.save!
+      flash[:alert] = "User doesn't exist"
+      render :new
+    end
   end
 
   def confirm
