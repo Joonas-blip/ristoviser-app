@@ -9,7 +9,7 @@ class NotesController < ApplicationController
     @note = Note.new(note_params)
     @note.user = current_user
     @note.restaurant = @restaurant
-    if @note.save!
+    if @note.save
       redirect_to collection_path(@collection)
     else
       flash[:alert] = 'Error, please fill every field'

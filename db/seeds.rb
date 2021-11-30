@@ -225,7 +225,7 @@ restaurant19 = Restaurant.new(
 )
 restaurant19.save!
 
-restaurant10 = Restaurant.new(
+restaurant20 = Restaurant.new(
   name: "La Piadina",
   street_address: "31 Rue d'Anjou",
   city: "Paris",
@@ -233,18 +233,39 @@ restaurant10 = Restaurant.new(
   phone_number: "+33 1 42 66 17 11",
   photo: "https://www.italiachiamaitalia.it/wp-content/uploads/2021/05/piadina-salame.jpg"
 )
-restaurant10.save!
+restaurant20.save!
 
+restaurant = 0
 5.times do
-  note = Note.new(content: 'this is very good', user: User.first, restaurant: Restaurant.first, rating: 4, price: '€€')
+  note = Note.new(content: 'this is very good', user: User.first, restaurant: Restaurant.all[restaurant], rating: 4, price: '€€')
   note.save!
+  restaurant += 1
 end
 
 collection1 = Collection.new(name: 'Milan', user: User.first)
 collection1.save!
 
-collection_restaurants1 = CollectionRestaurant.new(collection: collection1, restaurant: restaurant1)
-collection_restaurants1.save!
+restaurant = 0
+5.times do
+  collection_restaurants1 = CollectionRestaurant.new(collection: collection1, restaurant: Restaurant.all[restaurant])
+  collection_restaurants1.save!
+  restaurant += 1
+end
+
+collection2 = Collection.new(name: 'Paris', user: User.first)
+collection2.save!
+restaurant = 10
+5.times do
+  collection_restaurants2 = CollectionRestaurant.new(collection: collection2, restaurant: Restaurant.all[restaurant])
+  collection_restaurants2.save!
+  restaurant += 1
+end
+restaurant = 10
+5.times do
+  note = Note.new(content: 'this is very good', user: User.first, restaurant: Restaurant.all[restaurant], rating: 4, price: '€€')
+  note.save!
+  restaurant += 1
+end
 
 x = User.first.id + 1
 2.times do

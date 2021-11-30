@@ -9,7 +9,6 @@ class CollectionsController < ApplicationController
 
   def show
     @restaurants = @collection.restaurants
-
     @markers = @restaurants.geocoded.map do |restaurant|
       {
         lat: restaurant.latitude,

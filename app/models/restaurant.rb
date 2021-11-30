@@ -1,5 +1,5 @@
 class Restaurant < ApplicationRecord
-  #before_validation :build_address
+  before_validation :build_address
   has_many :collection_restaurants
   has_many :notes
   validates :name, presence: true, uniqueness: true
@@ -8,6 +8,8 @@ class Restaurant < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   def build_address
-    self.address = "#{street_address}, #{city}, #{country}"
+    if self.street_address != nil
+      self.address = "#{street_address}, #{city}, #{country}"
+    end
   end
 end
