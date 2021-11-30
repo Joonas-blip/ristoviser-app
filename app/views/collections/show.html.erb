@@ -5,23 +5,34 @@
 <% end %>
 
 <br>
+<div>
+  <h1 style="margin-bottom: 5vh;"><%= @collection.name %></h1>
+  <button id="map-view">Map View!</button>
+</div>
 
-<h1 style="margin-bottom: 5vh;"><%= @collection.name %></h1>
 
-<% if @collection.user == current_user %>
-  <%= link_to "Add A new Place", new_collection_collection_restaurant_path(@collection), class: "button-large" %>
-<% end %>
+<div >
+  <div id='toggle-cards'>
+  <% if @collection.user == current_user %>
+    <%= link_to "Add A new Place", new_collection_collection_restaurant_path(@collection), class: "button-large" %>
+  <% end %>
+    <% @collection.restaurants.each do |col| %>
+      <div class="restaurant-card-view">
+        <div class="card-image">
+          <img src="<%= col.photo %>" alt="restaurant image placeholder">
+        </div>
 
-<% @collection.restaurants.each do |col| %>
-  <div class="restaurant-card-view">
-    <div class="card-image">
-      <img src="<%= col.photo %>" alt="restaurant image placeholder">
-    </div>
-
-    <div class="card-details">
-      <div class="card-name-description">
-        <p><strong><%= link_to col.name, restaurant_path(col) %></strong></p>
+        <div class="card-details">
+          <div class="card-name-description">
+            <p><strong><%= link_to col.name, restaurant_path(col) %></strong></p>
+          </div>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
-<% end %>
+
+  <div id='toggle-map' class="hide">
+    <%= render 'shared/map' %>
+  </div>
+
+</div>

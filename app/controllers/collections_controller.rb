@@ -7,7 +7,17 @@ class CollectionsController < ApplicationController
     @collections = Collection.where("user_id = #{@user.id}")
   end
 
-  def show; end
+  def show
+    @restaurants = @collection.restaurants
+
+    @markers = @restaurants.geocoded.map do |restaurant|
+      {
+        lat: restaurant.latitude,
+        lng: restaurant.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { restaurant: restaurant })
+      }
+    end
+  end
 
   def new
     @collection = Collection.new
@@ -22,19 +32,6 @@ class CollectionsController < ApplicationController
     else
       flash[:alert] = 'Error, please fill every field'
       render :new
-    end
-  end
-
-  def map
-    @collection = Collection.find(params[:collection_id])
-    @restaurants = @collection.restaurants
-
-    @markers = @restaurants.geocoded.map do |restaurant|
-      {
-        lat: restaurant.latitude,
-        lng: restaurant.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { restaurant: restaurant })
-      }
     end
   end
 

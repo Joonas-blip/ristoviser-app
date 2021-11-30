@@ -9,6 +9,13 @@ class RestaurantsController < ApplicationController
       pattern = /\A#{query.downcase}.*|\s#{query.downcase}.*/
       @user_restaurants = @user_restaurants.select { |restaurant| restaurant.name.downcase =~ pattern || restaurant.address.downcase =~ pattern }
     end
+    @markers = @user_restaurants.map do |restaurant|
+      {
+        lat: restaurant.latitude,
+        lng: restaurant.longitude
+        #info_window: render_to_string(partial: "info_window", locals: { restaurant: restaurant })
+      }
+    end
   end
 
   def show
