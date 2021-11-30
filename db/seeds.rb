@@ -236,7 +236,7 @@ restaurant10 = Restaurant.new(
 restaurant10.save!
 
 5.times do
-  note = Note.new(content: 'this is very good '*5, user: User.first, restaurant: Restaurant.first)
+  note = Note.new(content: 'this is very good', user: User.first, restaurant: Restaurant.first, rating: 4, price: '€€')
   note.save!
 end
 
@@ -270,6 +270,6 @@ friend_rest = CollectionRestaurant.new(restaurant: restaurant8, collection: frie
 friend_rest.save!
 puts 'added restaurant to collection'
 
-friend_note = Note.new(user: user_two, restaurant: restaurant8, content: 'The best chef in Milan')
+friend_note = Note.new(user: user_two, restaurant: restaurant8, content: 'The best chef in Milan', price: '€€€', rating: 5)
 friend_note.save!
 puts 'added comment to restaurant'

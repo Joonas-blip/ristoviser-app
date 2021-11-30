@@ -17,6 +17,8 @@
   <%= simple_form_for [@restaurant, @note] do |f| %>
     <div class="formdevise">
       <br>
+      <%= f.input :price, placeholder: 'Select a Price', collection: ['€', '€€', '€€€']  %>
+      <%= f.input :rating, placeholder: 'Select a Rating', collection: 1..5  %>
       <%= f.text_area :content, placeholder: 'Add a Note', class: "textarea" %>
       <%= hidden_field_tag "format", @collection.id %>
       <%= f.button :submit, class: "button-large", style: "width: 60vw;" %>

@@ -9,12 +9,12 @@
             padding-bottom: 1vh;
         }
     }
-    
+
     .restaurant-image img {
         width: 80%;
         margin: 0 auto;
     }
-    
+
     .restaurant-address {
         margin-bottom: 3vh;
         p {
@@ -23,21 +23,21 @@
             font-size: 14px;
         }
     }
-    
-    .restaurant-description {
+
+    .restaurant-description p {
         width: 80%;
         text-align: left;
         margin: 0 auto;
-        padding-top: 5vh;
-        padding-bottom: 5vh;
+        padding-top: 2vh;
+        padding-bottom: 2vh;
     }
-    
+
     .directions {
         .button-large {
             width: 35%;
         }
     }
-    
+
     .add-restaurant-card {
         a,
         p {

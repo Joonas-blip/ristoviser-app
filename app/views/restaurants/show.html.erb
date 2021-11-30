@@ -12,8 +12,10 @@
     <img src="<%= @restaurant.photo %>"  alt="restaurant image placeholder">
   </div>
 
-  <div>
-    <p class="restaurant-description"><%= @note.content %></p>
+  <div  class="restaurant-description">
+    <p>Personal Rating: <%= '★' * @note.rating %></p>
+    <p>Price: <%= @note.price %></p>
+    <p><%= @note.content %></p>
 
   </div>
   <div class="directions button-large">
