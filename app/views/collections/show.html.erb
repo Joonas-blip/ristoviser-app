@@ -30,6 +30,11 @@
             <h6><%= link_to col.name, restaurant_path(col) %></strong></h6>
             <p><%= col.city %>, <%= col.country %></p>
           </div>
+
+          <div class="card-name-description">
+            <p><%= col.notes.first.rating %>⭐</p>
+            <p><%= col.notes.first.price %></p>
+          </div>
         </div>
       </div>
     <% end %>
