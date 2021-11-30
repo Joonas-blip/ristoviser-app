@@ -14,7 +14,7 @@
     <p> <%= link_to "See Pending Requests", dashboards_pending_path %></p>
     <p> <%= link_to "All Friends", dashboards_friends_path %></p>
     <h3>Account</h3>
-    <p> <%= link_to "Account Settings" %></p>
-    <p>Log Out </p>
+    <p><%= link_to "Account Settings" %></p>
+    <p><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></p>
   </div>
 </div>

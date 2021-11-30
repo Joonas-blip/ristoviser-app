@@ -9,11 +9,12 @@
   <button id="map-view">Map View!</button>
 </div>
 
+
 <div >
   <div id='toggle-cards'>
-  <% if @collection.user == current_user %>
-    <%= link_to "Add A new Place", new_collection_collection_restaurant_path(@collection), class: "button-large" %>
-  <% end %>
+    <% if @collection.user == current_user %>
+      <%= link_to "Add A new Place", new_collection_collection_restaurant_path(@collection), class: "button-large" %>
+    <% end %>
     <% @collection.restaurants.each do |col| %>
       <div class="restaurant-card-view">
         <div class="card-image">
