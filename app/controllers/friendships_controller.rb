@@ -25,12 +25,11 @@ class FriendshipsController < ApplicationController
   end
 
   def confirm
-    receiving_friend = current_user.friendships.find_by(friend_id: params[:id])
-    receiving_friend.status = 'confirmed'
+    sender_friend = current_user.friendships.find_by(friend_id: params[:id])
+    sender_friend.status = 'confirmed'
+    sender_friend.save!
+    receiving_friend = Friendship.new(user: User.find(params[:id]), friend_id: current_user.id, status: 'confirmed')
     receiving_friend.save!
-    sending_friend = User.find(params[:id]).friendships.find_by(friend_id: current_user.id)
-    sending_friend.status = 'confirmed'
-    sending_friend.save!
     redirect_to '/dashboards/friends'
   end
 end

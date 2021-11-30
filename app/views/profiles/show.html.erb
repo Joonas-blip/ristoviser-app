@@ -1,4 +1,6 @@
-      <p class="back black"><%= link_to "Back", dashboards_friends_path %></p>
+<div class="back-arrow">
+<%= link_to image_tag("arrow-back.png"), :back %>
+</div>
 
 
   <h1 style="margin-bottom: 5vh;"><%= @user.first_name %>'s Profile</h1>
@@ -32,4 +34,3 @@
   </div>
 <% end %>
 </div>
-
