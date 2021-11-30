@@ -12,8 +12,8 @@ class RestaurantsController < ApplicationController
     @markers = @user_restaurants.map do |restaurant|
       {
         lat: restaurant.latitude,
-        lng: restaurant.longitude
-        #info_window: render_to_string(partial: "info_window", locals: { restaurant: restaurant })
+        lng: restaurant.longitude,
+        info_window: render_to_string(partial: "shared/info_window", locals: { restaurant: restaurant })
       }
     end
   end

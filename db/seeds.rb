@@ -17,7 +17,7 @@ Restaurant.destroy_all
 puts "every data is destroyed"
 
 User.create(email: 'user1@mail.com', password: '123456', first_name: 'John', last_name: 'Doe', avatar_url: 'https://picsum.photos/50/50', location: "Milan")
-User.create(email: 'user2@mail.com', password: '123456', first_name: 'Davide', last_name: 'Oldani', avatar_url: 'https://picsum.photos/50/50', location: "Milan")
+user_two = User.create(email: 'user2@mail.com', password: '123456', first_name: 'Davide', last_name: 'Oldani', avatar_url: 'https://picsum.photos/50/50', location: "Milan")
 puts '2 users created'
 
 i = 3
@@ -262,7 +262,7 @@ end
   x += 1
 end
 
-friend_coll = Collection.new(user: User.find(2), name: 'Great Chefs', public: true)
+friend_coll = Collection.new(user: user_two, name: 'Great Chefs', public: true)
 friend_coll.save!
 puts 'friend collection created'
 
@@ -270,6 +270,6 @@ friend_rest = CollectionRestaurant.new(restaurant: restaurant8, collection: frie
 friend_rest.save!
 puts 'added restaurant to collection'
 
-friend_note = Note.new(user: User.find(2), restaurant: restaurant8, content: 'The best chef in Milan')
+friend_note = Note.new(user: user_two, restaurant: restaurant8, content: 'The best chef in Milan')
 friend_note.save!
 puts 'added comment to restaurant'
