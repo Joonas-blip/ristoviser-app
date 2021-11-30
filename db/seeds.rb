@@ -16,19 +16,20 @@ Restaurant.destroy_all
 
 puts "every data is destroyed"
 
-User.create(email: 'user1@mail.com', password: '123456', first_name: 'John', last_name: 'Doe', avatar_url: 'https://picsum.photos/50/50', location: "Milan")
-user_two = User.create(email: 'user2@mail.com', password: '123456', first_name: 'Davide', last_name: 'Oldani', avatar_url: 'https://picsum.photos/50/50', location: "Milan")
+User.create(email: 'user1@mail.com', password: '123456', first_name: 'John', last_name: 'Doe', avatar_url: 'https://randomuser.me/api/portraits/men/51.jpg', location: "Milan")
+user_two = User.create(email: 'user2@mail.com', password: '123456', first_name: 'Davide', last_name: 'Oldani', avatar_url: 'https://randomuser.me/api/portraits/women/51.jpg', location: "Milan")
 puts '2 users created'
 
 i = 3
 20.times do
   puts i
+  gender = ['men', 'women'].sample
   user = User.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     email: "user#{i}@mail.com",
     password: '123456',
-    avatar_url: 'https://picsum.photos/50/50',
+    avatar_url: "https://randomuser.me/api/portraits/#{gender}/#{i}.jpg",
     location: ['Milan', 'Paris'].sample
   )
   user.save!
