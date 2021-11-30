@@ -14,7 +14,7 @@ class CollectionRestaurantsController < ApplicationController
           search_result.each do |result|
             photo = retrieve_photo(result)
             restaurant = Restaurant.new(name: result['name'], address: result['formatted_address'], photo: photo)
-            restaurant.save!
+            restaurant.save
             @restaurants << restaurant
           end
           @restaurants
@@ -29,11 +29,11 @@ class CollectionRestaurantsController < ApplicationController
     restaurant = Restaurant.find(params[:format])
     @collection_restaurant = CollectionRestaurant.new(collection: collection, restaurant: restaurant)
     if Note.where("user_id = #{current_user.id} AND restaurant_id = #{restaurant.id}").exists?
-      @collection_restaurant.save!
+      @collection_restaurant.save
       redirect_to collection_path(collection)
     else
       redirect_to new_restaurant_note_path(restaurant, collection.id)
-      @collection_restaurant.save!
+      @collection_restaurant.save
     end
   end
 
