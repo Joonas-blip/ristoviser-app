@@ -1,30 +1,35 @@
-<div class="your-profile">
+      <p class="back black"><%= link_to "Back", dashboards_friends_path %></p>
 
-  <p class="back black"><%= link_to "Back", dashboards_friends_path %></p>
-
-  <br>
-  <br>
-
-<div class="your-profile">
 
   <h1 style="margin-bottom: 5vh;"><%= @user.first_name %>'s Profile</h1>
 
-      <div class="profile-avatar-big">
-        <p><%= image_tag(@user.avatar_url) %></p>
-      </div>
+  <div class="profile-avatar-big">
+    <p><%= image_tag(@user.avatar_url) %></p>
+  </div>
 
-      <div class="name-list">
-        <p><strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
-        <p ><%= pluralize(@user.collections.count, 'list')%></p>
-      </div>
+  <div class="name-list">
+    <p><strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
+    <p ><%= pluralize(@user.collections.count, 'list')%></p>
+  </div>
 
-      <div class="user-lists">
-        <h5><%= @user.first_name %>'s Lists (<%= @user.collections.count %>)</h5>
-      </div>
-
-</div>
+  <div class="user-lists">
+    <h5><%= @user.first_name %>'s Lists (<%= @user.collections.count %>)</h5>
+  </div>
 
   <br>
   <br>
+<% @user.collections.each do |collection| %>
+  <div class="list-card-share">
+    <div class="card-image">
+      <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmVzdGF1cmFudHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="restaurant image placeholder">
+    </div>
 
+    <div class="card-details" style="height: 7vh;">
+      <div class="card-name-description">
+        <p style="font-size: 18px; letter-spacing: 1px;"><strong><%= link_to collection.name, collection_path(collection[:id]) %></strong></p>
+      </div>
+    </div>
+  </div>
+<% end %>
 </div>
+
