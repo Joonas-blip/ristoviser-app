@@ -14,7 +14,7 @@ class CollectionsController < ApplicationController
       {
         lat: restaurant.latitude,
         lng: restaurant.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { restaurant: restaurant })
+        info_window: render_to_string(partial: "shared/info_window", locals: { restaurant: restaurant })
       }
     end
   end
