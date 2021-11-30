@@ -1,5 +1,5 @@
 class Restaurant < ApplicationRecord
-  before_validation :build_address
+  #before_validation :build_address
   has_many :collection_restaurants
   has_many :notes
   validates :name, presence: true, uniqueness: true
