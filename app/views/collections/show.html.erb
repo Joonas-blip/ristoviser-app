@@ -1,11 +1,15 @@
 <% if @collection.user == current_user %>
-  <p class="back black", style="color: black !important;"><%= link_to "Back", collections_path %></p>
+<div class="back-arrow">
+<%= link_to image_tag("arrow-back.png"), collections_path %>
+</div>
 <% else %>
-  <p class="back black", style="color: black !important;"><%= link_to "Back", profile_path(@collection.user) %></p>
+<div class="back-arrow">
+<%= link_to image_tag("arrow-back.png"), profile_path(@collection.user) %>
+</div>
 <% end %>
 
 <div>
-  <h1 style="margin-bottom: 5vh;"><%= @collection.name %></h1>
+  <h1 style="margin-bottom: 5vh;"><%= @collection.name %> List</h1>
   <button id="map-view">Map View!</button>
 </div>
 
@@ -13,7 +17,7 @@
 <div >
   <div id='toggle-cards'>
     <% if @collection.user == current_user %>
-      <%= link_to "Add A new Place", new_collection_collection_restaurant_path(@collection), class: "button-large" %>
+      <%= link_to "Add Place To List", new_collection_collection_restaurant_path(@collection), class: "button-large" %>
     <% end %>
     <% @collection.restaurants.each do |col| %>
       <div class="restaurant-card-view">
@@ -23,7 +27,8 @@
 
         <div class="card-details">
           <div class="card-name-description">
-            <p><strong><%= link_to col.name, restaurant_path(col) %></strong></p>
+            <h6><%= link_to col.name, restaurant_path(col) %></strong></h6>
+            <p><%= col.city %>, <%= col.country %></p>
           </div>
         </div>
       </div>

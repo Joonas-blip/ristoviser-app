@@ -1,3 +1,7 @@
+<div class="back-arrow">
+<%= link_to image_tag("arrow-back.png"), :back %>
+</div>
+
 <h1 style="margin-bottom: 5vh;">Add a Restaurant</h1>
 
 
@@ -18,9 +22,9 @@
 
     <div class="card-details">
 
-      <div class="card-name-description add-restaurant-card">
-        <p class="restaurant-name"><strong><%= rest.name %></strong></p>
-        <p class="add-restaurant-address"><small><%= rest.address %></small></p>
+      <div class="card-name-description">
+        <h6><%= rest.name %></h6>
+        <p><%= rest.address %></p>
       </div>
 
       <div class="button-large add">
