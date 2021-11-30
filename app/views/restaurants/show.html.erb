@@ -1,4 +1,6 @@
-  <p class="back black"><%= link_to "Back", :back %></p>
+<div class="back-arrow">
+<%= link_to image_tag("arrow-back.png"), :back %>
+</div>
 
   <h3><%= @restaurant.name %></h3>
   <div class="restaurant-address">
@@ -14,8 +16,8 @@
     <p class="restaurant-description"><%= @note.content %></p>
 
   </div>
-  <div class="directions">
-    <%= link_to "Get Directions", "https://www.google.com/maps/dir/?api=1&destination=" + @restaurant.name.gsub(" ", "+"), class: "button-large" %>
+  <div class="directions button-large">
+    <%= link_to "Get Directions", "https://www.google.com/maps/dir/?api=1&destination=" + @restaurant.name.gsub(" ", "+") %>
   </div>
   <br>
 </div>
