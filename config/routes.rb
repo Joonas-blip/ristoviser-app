@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   get 'homepage', to: 'pages#home'
 
   resources :collections, only: [:index, :show, :new, :create] do #important, main point of the app
-    get "/map", to: 'collections#map', as: 'map'
     resources :collection_restaurants, only: [:new, :create] #important
   end
 

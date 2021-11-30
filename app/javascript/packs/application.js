@@ -25,8 +25,7 @@ require("channels")
 // External imports
 import "bootstrap";
 import { initAnimation } from '../components/initSplash';
-// CSS
-import 'mapbox-gl/dist/mapbox-gl.css';
+
 // internal imports
 import { initMapbox } from '../plugins/init_mapbox';
 import { initOnShare } from '../components/initOnShare';
@@ -78,9 +77,9 @@ const btnSearch = document.querySelector("#btn-search");
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  initOnMap();
   initMapbox();
   geoLoc();
   initAnimation();
   initOnShare();
-  initOnMap();
 });
