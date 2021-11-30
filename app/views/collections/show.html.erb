@@ -1,8 +1,9 @@
 <% if @collection.user == current_user %>
-  <p class="back white", style="color: white !important;"><%= link_to "Back", collections_path %></p>
+  <p class="back black", style="color: black !important;"><%= link_to "Back", collections_path %></p>
 <% else %>
-  <p class="back white", style="color: white !important;"><%= link_to "Back", profile_path(@collection.user) %></p>
+  <p class="back black", style="color: black !important;"><%= link_to "Back", profile_path(@collection.user) %></p>
 <% end %>
+
 <br>
 <div>
   <h1 style="margin-bottom: 5vh;"><%= @collection.name %></h1>

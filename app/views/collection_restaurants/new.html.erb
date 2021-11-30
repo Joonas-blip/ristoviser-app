@@ -1,10 +1,9 @@
 <h1 style="margin-bottom: 5vh;">Add a Restaurant</h1>
 
-<br>
 
 <%= simple_form_for :search, url: new_collection_collection_restaurant_path, method: :get,  html: { id: :search } do |f| %>
   <div class="formdevise">
-  <%= f.input :selection, placeholder: 'Select a restaurant name', input_html: { id: 'query'} %>
+  <%= f.input :selection, placeholder: 'Select A Restaurant', input_html: { id: 'query'} %>
   <%= f.button :submit, class: "button-large",  id: 'btn-search' %>
   </div>
 <% end %>
@@ -19,13 +18,13 @@
 
     <div class="card-details">
 
-      <div class="card-name-description">
-        <p><strong><%= rest.name %></strong></p>
-        <p><small><%= rest.address %></small></p>
+      <div class="card-name-description add-restaurant-card">
+        <p class="restaurant-name"><strong><%= rest.name %></strong></p>
+        <p class="add-restaurant-address"><small><%= rest.address %></small></p>
       </div>
 
-      <div class="add-button">
-        <%= link_to image_tag("add.png"), collection_collection_restaurants_path(@collection, rest.id), class: "add", method: :post, action: :create %>
+      <div class="button-large add">
+        <%= link_to "Add", collection_collection_restaurants_path(@collection, rest.id), method: :post, action: :create %>
       </div>
 
     </div>

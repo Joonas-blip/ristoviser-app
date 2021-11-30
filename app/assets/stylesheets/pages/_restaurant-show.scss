@@ -1,47 +1,61 @@
-.restaurant-show {
-    background-color: white;
-    min-height: 100vh;
-    h3 {
-        color: black;
+    .restaurant-show {
+        background-color: white;
+        min-height: 100vh;
+        h3 {
+            color: black;
+            padding-top: 5vh;
+            font-weight: 400;
+            width: 80%;
+            margin: 0 auto;
+            padding-bottom: 1vh;
+        }
+        img {
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+    
+    .restaurant-address {
+        margin-bottom: 3vh;
+        p {
+            font-weight: 100;
+            margin-bottom: 0;
+            font-size: 12px;
+        }
+    }
+    
+    .restaurant-description {
+        width: 80%;
+        text-align: justify;
+        margin: 0 auto;
         padding-top: 5vh;
-        font-weight: 400;
-        width: 80%;
-        margin: 0 auto;
-        padding-bottom: 1vh;
+        padding-bottom: 5vh;
     }
-    img {
-        width: 80%;
-        margin: 0 auto;
+    
+    .back {
+        padding-top: 2vh;
+        padding-left: 10vw;
+        float: left;
+        text-decoration: none;
     }
-}
-
-.restaurant-address {
-    margin-bottom: 3vh;
-    p {
-        font-weight: 100;
-        margin-bottom: 0;
+    
+    .white a {
+        color: white;
     }
-}
-
-.restaurant-description {
-    width: 80%;
-    text-align: justify;
-    margin: 0 auto;
-    padding-top: 3vh;
-    margin-bottom: 3vh;
-}
-
-.back {
-    padding-top: 2vh;
-    padding-left: 10vw;
-    float: left;
-    text-decoration: none;
-}
-
-.white a {
-    color: white;
-}
-
-.black a {
-    color: black;
-}
+    
+    .black a {
+        color: black;
+    }
+    
+    .directions {
+        .button-large {
+            width: 35%;
+        }
+    }
+    
+    .add-restaurant-card {
+        a,
+        p {
+            font-size: 14px !important;
+        }
+    }

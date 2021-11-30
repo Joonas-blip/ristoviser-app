@@ -1,4 +1,4 @@
-<p class="back white"><%= link_to "Back", dashboards_path %></p>
+<p class="back black"><%= link_to "Back", dashboards_path %></p>
 <br>
 <br>
 
@@ -8,9 +8,12 @@
   <%= simple_form_for :search, url: new_friendship_path, method: :get do |f| %>
     <div class="formdevise friend-search-container">
       <%= f.input :search, placeholder: 'Enter Name' %>
-      <%= f.button :submit, 'Search for User', class: "button-large search-friend" %>
+      <%= f.button :submit, 'Search', class: "button-large search-friend" %>
     </div>
   <% end %>
+
+  <br>
+  <br>
 
   <div class="profile-container">
     <% @users.each do |user| %>
