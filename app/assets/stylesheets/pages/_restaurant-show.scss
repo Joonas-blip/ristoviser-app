@@ -9,10 +9,11 @@
             margin: 0 auto;
             padding-bottom: 1vh;
         }
-        img {
-            width: 80%;
-            margin: 0 auto;
-        }
+    }
+    
+    .restaurant-image img {
+        width: 80%;
+        margin: 0 auto;
     }
     
     .restaurant-address {
@@ -30,21 +31,6 @@
         margin: 0 auto;
         padding-top: 5vh;
         padding-bottom: 5vh;
-    }
-    
-    .back {
-        padding-top: 2vh;
-        padding-left: 10vw;
-        float: left;
-        text-decoration: none;
-    }
-    
-    .white a {
-        color: white;
-    }
-    
-    .black a {
-        color: black;
     }
     
     .directions {
