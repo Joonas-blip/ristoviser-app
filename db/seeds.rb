@@ -255,13 +255,13 @@ end
 
 collection2 = Collection.new(name: 'Paris List', user: User.first)
 collection2.save!
-restaurant = 10
+restaurant = 11
 5.times do
   collection_restaurants2 = CollectionRestaurant.new(collection: collection2, restaurant: Restaurant.all[restaurant])
   collection_restaurants2.save!
   restaurant += 1
 end
-restaurant = 10
+restaurant = 11
 5.times do
   note = Note.new(content: 'this is very good', user: User.first, restaurant: Restaurant.all[restaurant], rating: 4, price: '€€')
   note.save!
