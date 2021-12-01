@@ -7,9 +7,10 @@
 <%= link_to image_tag("arrow-back.png"), profile_path(@collection.user) %>
 </div>
 <% end %>
-
+<br>
+<br>
 <div>
-  <h1 style="margin-bottom: 5vh;"><%= @collection.name %> List</h1>
+  <h2 style="margin-bottom: 5vh;"><%= @collection.name %> List</h2>
   <button id="map-view">Map View!</button>
 </div>
 
@@ -30,10 +31,12 @@
             <h6><%= link_to col.name, restaurant_path(col, friend_id: @collection.user_id) %></strong></h6>
             <p><%= col.city %>, <%= col.country %></p>
           </div>
-          <div class="card-name-description">
+
+          <div class="card-stars-rating">
             <p><%= '⭐' * col.notes[0].rating %></p>
             <p><%= col.notes[0].price %></p>
           </div>
+
         </div>
       </div>
     <% end %>
