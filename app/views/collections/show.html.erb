@@ -33,7 +33,9 @@
           </div>
 
           <div class="card-stars-rating">
-            <p><%= '⭐' * col.notes[0].rating %></p>
+            <p><% col.notes[0].rating.times do %>
+              <i class="fas fa-star" style="color:rgb(255, 202, 27); font-size:11px;"></i>
+            <% end %></p>
             <p><%= col.notes[0].price %></p>
           </div>
 
