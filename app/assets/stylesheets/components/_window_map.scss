@@ -50,11 +50,17 @@
 }
 
 
-canvas.mapboxgl-canvas {
-  height: 600px !important;
+// canvas.mapboxgl-canvas {
+//   height: 600px !important;
+// }
+
+#map {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: calc(100% + 1px);
 }
-
-
 
 
 // #map {
