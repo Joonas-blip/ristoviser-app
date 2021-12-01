@@ -1,3 +1,7 @@
+<div class="globe">
+  <button id="map-view"><%= image_tag("globe.png") %></button>
+</div>
+
 <% if @collection.user == current_user %>
 <div class="back-arrow">
 <%= link_to image_tag("arrow-back.png"), collections_path %>
@@ -9,9 +13,8 @@
 <% end %>
 <br>
 <br>
-<div>
+<div id= 'toggle-title'>
   <h2 style="margin-bottom: 5vh;"><%= @collection.name %> List</h2>
-  <button id="map-view">Map View!</button>
 </div>
 
 

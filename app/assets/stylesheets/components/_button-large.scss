@@ -54,3 +54,19 @@
         height: auto;
     }
 }
+
+#map-view {
+  z-index: 1;
+  position: fixed;
+  bottom: 100px;
+  right: 50%;
+  background: none;
+  border: none;
+  border-radius: 2em;
+  background-color: black;
+  transform: translate(50%, 0);
+  padding: .5em 1em;
+  img {
+    height: 30px;
+  }
+}

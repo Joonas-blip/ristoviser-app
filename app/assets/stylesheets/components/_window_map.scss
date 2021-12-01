@@ -47,3 +47,31 @@
 //
 }
 
+
+.view-price_window {
+  a {
+  margin-top: 10px;
+  padding-bottom: 10px;
+  color: black;
+  }
+}
+
+
+// canvas.mapboxgl-canvas {
+//   height: 600px !important;
+// }
+
+#map {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: calc(100% + 1px);
+}
+
+
+// #map {
+//   width: 75%;
+//   height: 100%;
+// }
+
