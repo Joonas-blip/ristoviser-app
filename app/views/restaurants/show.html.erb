@@ -17,7 +17,9 @@
     <div class="restaurant-details">
       <div class="stars-container">
         <p>My Rating:</p>
-        <p><%= '⭐' * @note.rating %></p>
+        <p><% @note.rating.times do %>
+              <i class="fas fa-star" style="color:rgb(255, 202, 27); font-size: 11px;"></i>
+            <% end %></p>
       </div>
       <div class="price-container">
         <p>Price:</p>
