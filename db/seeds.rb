@@ -270,17 +270,13 @@ end
 
 x = User.first.id + 1
 2.times do
-  friendship_x = Friendship.new(user: User.first, friend_id: User.find(x).id, status: "confirmed")
+  friendship_x = Friendship.new(asker: User.first, receiver: User.find(x), status: "confirmed")
   friendship_x.save!
-  friendship_y = Friendship.new(user: User.find(x), friend_id: User.first.id, status: "confirmed")
-  friendship_y.save!
   x += 1
 end
 2.times do
-  friendship6 = Friendship.new(user: User.find(x), friend_id: User.first.id, status: "pending")
+  friendship6 = Friendship.new(asker: User.find(x), receiver: User.first, status: "pending")
   friendship6.save!
-  friendship7 = Friendship.new(user: User.first, friend_id: User.find(x).id, status: "pending")
-  friendship7.save!
   x += 1
 end
 
