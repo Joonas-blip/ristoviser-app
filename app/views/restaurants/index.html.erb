@@ -23,6 +23,10 @@
         <h6><%= link_to restaurant.name, restaurant_path(restaurant) %></h6>
         <p><%= restaurant.city %>, <%= restaurant.country %></p>
       </div>
+      <div class="card-stars-rating">
+        <p><%= '⭐' * restaurant.notes[0].rating %></p>
+        <p><%= restaurant.notes[0].price %></p>
+      </div>
     </div>
   </div>
 <% end %>
