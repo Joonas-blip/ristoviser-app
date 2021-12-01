@@ -1,7 +1,5 @@
 <div class="container_window">
   <%= image_tag restaurant.photo, class: "image_window" %>
-  <h2 class="title-infobox"><%= restaurant.name %></h2>
-      <div class="view-price_window">
-           <div class="view-button view-button-map"><%= link_to "View", restaurant_path(restaurant) %></li>
-      </div>
+  <h2 class="title-infobox"><%= link_to restaurant.name, restaurant_path(restaurant[:id]) %></h2>
+
 </div>
