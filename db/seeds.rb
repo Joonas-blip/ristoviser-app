@@ -243,7 +243,7 @@ restaurant = 0
   restaurant += 1
 end
 
-collection1 = Collection.new(name: 'Milan', user: User.first)
+collection1 = Collection.new(name: 'Milan List', user: User.first)
 collection1.save!
 
 restaurant = 0
@@ -253,7 +253,7 @@ restaurant = 0
   restaurant += 1
 end
 
-collection2 = Collection.new(name: 'Paris', user: User.first)
+collection2 = Collection.new(name: 'Paris List', user: User.first)
 collection2.save!
 restaurant = 10
 5.times do
