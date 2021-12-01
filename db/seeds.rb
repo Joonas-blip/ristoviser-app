@@ -244,6 +244,8 @@ restaurant = 0
 end
 
 collection1 = Collection.new(name: 'Milan List', user: User.first)
+file1 = URI.open('https://static.open.online/wp-content/uploads/2020/03/MILANO-TAG.jpg')
+collection1.photo.attach(io: file1, filename: 'milan.png', content_type: 'image/png')
 collection1.save!
 
 restaurant = 0
@@ -254,6 +256,8 @@ restaurant = 0
 end
 
 collection2 = Collection.new(name: 'Paris List', user: User.first)
+file2 = URI.open('https://www.parigi.it/images/large/tbgc17487_parigiit-guida-di-parigi4.jpeg?v=1da1')
+collection2.photo.attach(io: file2, filename: 'paris.png', content_type: 'image/png')
 collection2.save!
 restaurant = 11
 5.times do
@@ -281,6 +285,8 @@ end
 end
 
 friend_coll = Collection.new(user: user_two, name: 'Great Chefs', public: true)
+file3 = URI.open('https://www.mastermeeting.it/upload/mastermeeting/hotel-restaurant-trend/hOMESITOMMexecutivechef.jpg')
+friend_coll.photo.attach(io: file3, filename: 'chef.png', content_type: 'image/png')
 friend_coll.save!
 puts 'friend collection created'
 
