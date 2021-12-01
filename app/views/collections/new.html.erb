@@ -9,6 +9,8 @@
 <div class="formdevise">
   <%= f.input :name, placeholder: 'Enter List Name' %>
   <br>
+  <%= f.input :photo, as: :file %>
+  <br>
   <%= f.label 'Set As Public', class: "label-capitalize" %>
   <%= f.input :public, as: :boolean  %>
   <br>
