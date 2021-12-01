@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_30_155908) do
+ActiveRecord::Schema.define(version: 2021_12_01_093407) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,12 +34,12 @@ ActiveRecord::Schema.define(version: 2021_11_30_155908) do
   end
 
   create_table "friendships", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.integer "friend_id"
+    t.bigint "asker_id", null: false
+    t.integer "receiver_id"
     t.string "status", default: "pending"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_friendships_on_user_id"
+    t.index ["asker_id"], name: "index_friendships_on_asker_id"
   end
 
   create_table "notes", force: :cascade do |t|
@@ -88,7 +88,8 @@ ActiveRecord::Schema.define(version: 2021_11_30_155908) do
   add_foreign_key "collection_restaurants", "collections"
   add_foreign_key "collection_restaurants", "restaurants"
   add_foreign_key "collections", "users"
-  add_foreign_key "friendships", "users"
+  add_foreign_key "friendships", "users", column: "asker_id"
+  add_foreign_key "friendships", "users", column: "receiver_id"
   add_foreign_key "notes", "restaurants"
   add_foreign_key "notes", "users"
 end

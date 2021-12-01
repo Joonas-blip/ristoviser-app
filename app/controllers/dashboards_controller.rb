@@ -1,16 +1,14 @@
 class DashboardsController < ApplicationController
 
   def index
-   @user = current_user
+    @user = current_user
   end
 
   def friends
-    @friendships = Friendship.all
-    @friends = Friendship.of_status(current_user, "confirmed")
+    @friends = current_user.friends
   end
 
   def pending
-    @friendships = Friendship.all
-    @friends = Friendship.of_status(current_user, "pending")
+    @friends = Friendship.of_status_pending(current_user)
   end
 end

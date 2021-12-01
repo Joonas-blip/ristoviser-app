@@ -12,24 +12,20 @@ class FriendshipsController < ApplicationController
   end
 
   def create
-    @friendship_asker = Friendship.new(user: current_user, friend_id: params[:format])
-    unless @friendship_asker.save!
-      flash[:alert] = "User doesn't exist"
-      render :new
-    end
-    @friendship_receiver = Friendship.new(user: User.find(params[:format]), friend_id: current_user.id)
-    unless @friendship_receiver.save!
+    @friendship = Friendship.new(asker: current_user, receiver: User.find(params[:format]))
+    unless @friendship.save
       flash[:alert] = "User doesn't exist"
       render :new
     end
   end
 
   def confirm
-    sender_friend = current_user.friendships.find_by(friend_id: params[:id])
-    sender_friend.status = 'confirmed'
-    sender_friend.save!
-    receiving_friend = Friendship.new(user: User.find(params[:id]), friend_id: current_user.id, status: 'confirmed')
-    receiving_friend.save!
+    friendship = current_user.friendships_as_receiver.find_by(asker: User.find(params[:id]))
+    friendship.status = 'confirmed'
+    unless friendship.save
+      flash[:alert] = "Something went wrong"
+      render :new
+    end
     redirect_to '/dashboards/friends'
   end
 end
