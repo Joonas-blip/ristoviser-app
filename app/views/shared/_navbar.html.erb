@@ -1,16 +1,11 @@
  <div class="navbar">
-        <div class="globe" >
-
-          <%= image_tag("globe.png") %>
-          <p>Map View</p>
+        <div class="add-list">
+          <%= link_to image_tag("add-list.png"), collections_path  %>
+          <p>My Lists</p>
         </div>
         <div class="search">
           <%= link_to image_tag("search.png"), restaurants_path %>
           <p>Explore</p>
-        </div>
-        <div class="add-list">
-          <%= link_to image_tag("add-list.png"), collections_path  %>
-          <p>My Lists</p>
         </div>
         <div class="profile">
           <%= link_to image_tag("profile.png"), dashboards_path  %>

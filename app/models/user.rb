@@ -3,7 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :friendships
+  has_many :friendships_as_asker, class_name: "Friendship", foreign_key: :asker_id
+  has_many :friendships_as_receiver, class_name: "Friendship", foreign_key: :receiver_id
   has_many :notes
   has_many :collections
   has_many :collection_restaurants, through: :collections
@@ -11,9 +12,9 @@ class User < ApplicationRecord
 
   def friends(status = 'confirmed')
     user_ids = Friendship.where(
-      "(user_id = :id OR friend_id = :id) AND status = '#{status}'",
+      "(asker_id = :id OR receiver_id = :id) AND status = '#{status}'",
        id: self.id
-    ).pluck(:user_id, :friend_id)
+    ).pluck(:asker_id, :receiver_id)
      .flatten
      .uniq
      .reject { |id| id == self.id }
@@ -22,9 +23,9 @@ class User < ApplicationRecord
   end
 
   def friend_of?(user)
-    Friendship.where("(user_id = :id OR friend_id = :id) AND status = 'confirmed'",
+    Friendship.where("(asker_id = :id OR receiver_id = :id) AND status = 'confirmed'",
     id: user.id)
-              .pluck(:user_id, :friend_id)
+              .pluck(:asker_id, :receiver_id)
               .flatten
               .uniq
               .find { |id| id == user.id}

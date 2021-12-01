@@ -244,6 +244,8 @@ restaurant = 0
 end
 
 collection1 = Collection.new(name: 'Milan List', user: User.first)
+file1 = URI.open('https://static.open.online/wp-content/uploads/2020/03/MILANO-TAG.jpg')
+collection1.photo.attach(io: file1, filename: 'milan.png', content_type: 'image/png')
 collection1.save!
 
 restaurant = 0
@@ -254,14 +256,16 @@ restaurant = 0
 end
 
 collection2 = Collection.new(name: 'Paris List', user: User.first)
+file2 = URI.open('https://www.parigi.it/images/large/tbgc17487_parigiit-guida-di-parigi4.jpeg?v=1da1')
+collection2.photo.attach(io: file2, filename: 'paris.png', content_type: 'image/png')
 collection2.save!
-restaurant = 10
+restaurant = 11
 5.times do
   collection_restaurants2 = CollectionRestaurant.new(collection: collection2, restaurant: Restaurant.all[restaurant])
   collection_restaurants2.save!
   restaurant += 1
 end
-restaurant = 10
+restaurant = 11
 5.times do
   note = Note.new(content: 'this is very good', user: User.first, restaurant: Restaurant.all[restaurant], rating: 4, price: '€€')
   note.save!
@@ -270,21 +274,19 @@ end
 
 x = User.first.id + 1
 2.times do
-  friendship_x = Friendship.new(user: User.first, friend_id: User.find(x).id, status: "confirmed")
+  friendship_x = Friendship.new(asker: User.first, receiver: User.find(x), status: "confirmed")
   friendship_x.save!
-  friendship_y = Friendship.new(user: User.find(x), friend_id: User.first.id, status: "confirmed")
-  friendship_y.save!
   x += 1
 end
 2.times do
-  friendship6 = Friendship.new(user: User.find(x), friend_id: User.first.id, status: "pending")
+  friendship6 = Friendship.new(asker: User.find(x), receiver: User.first, status: "pending")
   friendship6.save!
-  friendship7 = Friendship.new(user: User.first, friend_id: User.find(x).id, status: "pending")
-  friendship7.save!
   x += 1
 end
 
 friend_coll = Collection.new(user: user_two, name: 'Great Chefs', public: true)
+file3 = URI.open('https://www.mastermeeting.it/upload/mastermeeting/hotel-restaurant-trend/hOMESITOMMexecutivechef.jpg')
+friend_coll.photo.attach(io: file3, filename: 'chef.png', content_type: 'image/png')
 friend_coll.save!
 puts 'friend collection created'
 

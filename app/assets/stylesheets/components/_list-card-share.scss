@@ -52,6 +52,16 @@
     }
 }
 
+.card-stars-rating {
+    height: 50%;
+    padding-right: 3vw;
+    p {
+        margin-bottom: 0;
+        font-size: 12px !important;
+        text-align: left;
+    }
+}
+
 .list-share-buttons {
     width: 20%;
     display: flex;

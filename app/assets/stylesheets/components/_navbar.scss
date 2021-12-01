@@ -15,7 +15,7 @@
             gap: 30px;
             border-top: 1px solid lightgray;
         }
-        
+
         .navbar p {
             color: black;
             font-size: 12px;
@@ -23,11 +23,15 @@
             font-weight: 300;
             letter-spacing: 0.3px;
         }
-        
+
         .navbar img {
             height: 25px;
         }
-        
+
         .list img {
             width: 45px !important;
+        }
+
+        .search img {
+          min-width: 25px;
         }

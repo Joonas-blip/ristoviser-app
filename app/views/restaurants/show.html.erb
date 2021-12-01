@@ -1,7 +1,8 @@
 <div class="back-arrow">
 <%= link_to image_tag("arrow-back.png"), :back %>
 </div>
-
+<br>
+<br>
   <h3><%= @restaurant.name %></h3>
   <div class="restaurant-address">
     <p><%= @restaurant.street_address %></p>
@@ -11,13 +12,25 @@
   <div class="restaurant-image">
     <img src="<%= @restaurant.photo %>"  alt="restaurant image placeholder">
   </div>
-
+  <br>
   <div  class="restaurant-description">
-    <p>Personal Rating: <%= '⭐' * @note.rating %></p>
-    <p>Price: <%= @note.price %></p>
-    <p><%= @note.content %></p>
-
+    <div class="restaurant-details">
+      <div class="stars-container">
+        <p>My Rating:</p>
+        <p><% @note.rating.times do %>
+              <i class="fas fa-star" style="color:rgb(255, 202, 27); font-size: 11px;"></i>
+            <% end %></p>
+      </div>
+      <div class="price-container">
+        <p>Price:</p>
+        <p><%= @note.price %></p>
+      </div>
+    </div>
+    <br>
+    <br>
+    <p class="content-container"><%= @note.content %></p>
   </div>
+  <br>
   <div class="directions button-large">
     <%= link_to "Get Directions", "https://www.google.com/maps/dir/?api=1&destination=" + @restaurant.name.gsub(" ", "+") %>
   </div>
