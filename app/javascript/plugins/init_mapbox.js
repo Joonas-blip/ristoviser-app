@@ -5,9 +5,12 @@ const buildMap = (mapElement) => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/doriansam/ckwndpcsq6zy714p3s252vlmc'
+    style: 'mapbox://styles/doriansam/ckwndpcsq6zy714p3s252vlmc',
+    attributionControl: false
   });
 };
+
+
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
@@ -33,7 +36,18 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
+    map.addControl(
+      new mapboxgl.GeolocateControl({
+        positionOptions: {
+          enableHighAccuracy: false
+        },
+        showAccuracyCircle: false,
+        fitBoundsOptions: { maxZoom: 15 }
+      })
+    );
   }
 };
+
+
 
 export { initMapbox };
