@@ -127,11 +127,8 @@ GEM
       timeout
     nio4r (2.5.8)
     nokogiri (1.12.5-x86_64-darwin)
-<<<<<<< HEAD
-=======
       racc (~> 1.4)
     nokogiri (1.12.5-x86_64-linux)
->>>>>>> 94137bfa600a2e27b9f0c5952270a62534bb9c75
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.2.3)
