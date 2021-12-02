@@ -287,12 +287,25 @@ restaurantA5 = Restaurant.new(
 )
 restaurantA5.save!
 
+restaurantB1 = Restaurant.new(
+  name: "Osteria Sant' Eustorgio",
+  street_address: "Piazza Sant'Eustorgio 6",
+  city: "Milan",
+  country: "Italy",
+  phone_number: "+39 02 5810 1396",
+  photo: "https://www.ordina-online-ristoranti.it/img/logo_quandoo/ristorante-santeustorgio-piazza-santeustorgio-milano-20122-milano.jpg"
+)
+restaurantB1.save!
+
 restaurant = 0
 5.times do
-  note = Note.new(content: 'this is very good', user: User.first, restaurant: Restaurant.all[restaurant], rating: 4, price: '€€')
+  note = Note.new(content: 'this is very good', user: User.first, restaurant: Restaurant.all[restaurant], rating: [3, 4, 5].sample, price: ['€', '€€', '€€€'].sample)
   note.save!
   restaurant += 1
 end
+
+noteB1 = Note.new(content: 'Very good restaurant, especially for ceremonies', user: User.first, restaurant: restaurantB1, rating: 4, price: '€€')
+noteB1.save!
 
 collection1 = Collection.new(name: 'Milan List', user: User.first)
 file1 = URI.open('https://static.open.online/wp-content/uploads/2020/03/MILANO-TAG.jpg')
@@ -306,6 +319,9 @@ restaurant = 0
   restaurant += 1
 end
 
+collection_restaurantsB1 = CollectionRestaurant.new(collection: collection1, restaurant: restaurantB1)
+collection_restaurantsB1.save!
+
 collection2 = Collection.new(name: 'Paris List', user: User.first)
 file2 = URI.open('https://www.parigi.it/images/large/tbgc17487_parigiit-guida-di-parigi4.jpeg?v=1da1')
 collection2.photo.attach(io: file2, filename: 'paris.png', content_type: 'image/png')
@@ -318,18 +334,18 @@ restaurant = 11
 end
 restaurant = 11
 5.times do
-  note = Note.new(content: 'this is very good', user: User.first, restaurant: Restaurant.all[restaurant], rating: 4, price: '€€')
+  note = Note.new(content: 'this is very good', user: User.first, restaurant: Restaurant.all[restaurant], rating: [3, 4, 5].sample, price: ['€', '€€', '€€€'].sample)
   note.save!
   restaurant += 1
 end
 
-x = User.first.id + 1
-2.times do
+x = User.first.id + 2
+4.times do
   friendship_x = Friendship.new(asker: User.first, receiver: User.find(x), status: "confirmed")
   friendship_x.save!
   x += 1
 end
-2.times do
+4.times do
   friendship6 = Friendship.new(asker: User.find(x), receiver: User.first, status: "pending")
   friendship6.save!
   x += 1
