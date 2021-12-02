@@ -35,43 +35,43 @@ import { initOnMap } from '../components/initOnMap';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
-const geoLoc = () => {
+// const geoLoc = () => {
 
-const btnSearch = document.querySelector("#btn-search");
+// const btnSearch = document.querySelector("#btn-search");
 
-  if (btnSearch) {
-    console.log("button is here")
-    // btnSearch.addEventListener("click", () => {
-
-
-    function appendLocation(location, verb) {
-      verb = verb || 'updated';
-      var newLocation = document.createElement('h1');
-      newLocation.innerHTML = 'Location ' + verb + ': ' + location.coords.latitude + ', ' + location.coords.longitude + '';
-      document.body.appendChild(newLocation);
-
-      const url = new URL(window.location.href);
-      url.searchParams.set('param1', 'val1');
-      window.history.replaceState(null, null, url);
+//   if (btnSearch) {
+//     console.log("button is here")
+//     // btnSearch.addEventListener("click", () => {
 
 
-    }
+//     function appendLocation(location, verb) {
+//       verb = verb || 'updated';
+//       var newLocation = document.createElement('h1');
+//       newLocation.innerHTML = 'Location ' + verb + ': ' + location.coords.latitude + ', ' + location.coords.longitude + '';
+//       document.body.appendChild(newLocation);
 
-      if ('geolocation' in navigator) {
-        btnSearch.addEventListener('click', function () {
-          navigator.geolocation.getCurrentPosition(function (location) {
-            appendLocation(location, 'fetched');
-          });
-          let watchId = navigator.geolocation.watchPosition(appendLocation);
-        });
-      } else {
-        console.log('Geolocation API not supported.');
-      }
+//       const url = new URL(window.location.href);
+//       url.searchParams.set('param1', 'val1');
+//       window.history.replaceState(null, null, url);
 
 
-    // })
-  }
-}
+//     }
+
+//       if ('geolocation' in navigator) {
+//         btnSearch.addEventListener('click', function () {
+//           navigator.geolocation.getCurrentPosition(function (location) {
+//             appendLocation(location, 'fetched');
+//           });
+//           let watchId = navigator.geolocation.watchPosition(appendLocation);
+//         });
+//       } else {
+//         console.log('Geolocation API not supported.');
+//       }
+
+
+//     // })
+//   }
+// }
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -79,7 +79,6 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initOnMap();
   initMapbox();
-  geoLoc();
   initAnimation();
   initOnShare();
 });
