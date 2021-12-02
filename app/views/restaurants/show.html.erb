@@ -5,9 +5,14 @@
 <br>
   <h3><%= @restaurant.name %></h3>
   <div class="restaurant-address">
-    <p><%= @restaurant.street_address %></p>
-    <p><%= @restaurant.city %>, <%= @restaurant.country %></p>
-    <p class="restaurant-number"><%= @restaurant.phone_number %></p>
+    <div class="address">
+        <%= image_tag("home.png") %>
+        <p><%= @restaurant.street_address %>, <%= @restaurant.city %>, <%= @restaurant.country %></p>
+    </div>
+    <div class="number">
+        <%= image_tag("phone.png") %>
+        <p class><%= @restaurant.phone_number %></p>
+    </div>
   </div>
   <div class="restaurant-image">
     <img src="<%= @restaurant.photo %>"  alt="restaurant image placeholder">
