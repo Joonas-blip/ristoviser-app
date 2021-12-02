@@ -25,7 +25,7 @@ class CollectionsController < ApplicationController
   def create
     @collection = Collection.new(collection_params)
     @collection.user = current_user
-    if @collection.save!
+    if @collection.save
       flash[:notice] = 'Collection successfully created!'
       redirect_to collection_path(@collection)
     else
