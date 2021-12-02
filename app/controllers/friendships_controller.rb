@@ -17,6 +17,7 @@ class FriendshipsController < ApplicationController
       flash[:alert] = "User doesn't exist"
       render :new
     end
+    flash[:notice] = "Friend request sent!"
   end
 
   def confirm
