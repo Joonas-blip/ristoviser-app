@@ -1,6 +1,6 @@
 <div class="container_window">
   <%= image_tag restaurant.photo, class: "image_window" %>
-
-  <h2 class="title-infobox"><%= link_to restaurant.name, restaurant_path(restaurant, friend_id: @collection.user_id) %></h2>
+  <% friend = @collection ? @collection.user_id : current_user.id %>
+  <h2 class="title-infobox"><%= link_to restaurant.name, restaurant_path(restaurant, friend_id: friend) %></h2>
 
 </div>
