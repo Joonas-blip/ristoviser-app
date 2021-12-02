@@ -16,8 +16,8 @@ Restaurant.destroy_all
 
 puts "every data is destroyed"
 
-User.create(email: 'user1@mail.com', password: '123456', first_name: 'John', last_name: 'Doe', avatar_url: 'https://randomuser.me/api/portraits/men/51.jpg', location: "Milan")
-user_two = User.create(email: 'user2@mail.com', password: '123456', first_name: 'Davide', last_name: 'Oldani', avatar_url: 'https://randomuser.me/api/portraits/women/51.jpg', location: "Milan")
+User.create(email: 'joonas@mail.com', password: '123456', first_name: 'Joonas', last_name: 'Villanen', avatar_url: 'https://ca.slack-edge.com/T02NE0241-U02H7UJ0G1W-6d5b1478977b-72', location: "Milan")
+user_two = User.create(email: 'andrea@mail.com', password: '123456', first_name: 'Andrea', last_name: 'Corbetta', avatar_url: 'https://ca.slack-edge.com/T02NE0241-U02GJP02R18-33fe0961aed4-512', location: "Milan")
 puts '2 users created'
 
 i = 3
