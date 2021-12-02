@@ -20,7 +20,6 @@ const initOnShare = () => {
       });
     });
   }
-
 }
 
 export { initOnShare }
