@@ -7,7 +7,7 @@
 
   <%= simple_form_for :search, url: new_friendship_path, method: :get do |f| %>
     <div class="formdevise friend-search-container">
-      <%= f.input :search, placeholder: 'Enter Name' %>
+      <%= f.input :search, placeholder: 'Enter Name', label: false %>
       <%= f.button :submit, 'Search', class: "button-large search-friend" %>
     </div>
   <% end %>

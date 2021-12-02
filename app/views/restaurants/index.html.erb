@@ -10,7 +10,7 @@
 <div id='toggle-cards'>
 <%= simple_form_for :search, url: restaurants_path, method: :get,  html: { id: :search } do |f| %>
   <div class="formdevise">
-  <%= f.input :Search, placeholder: 'Find A Restaurant', input_html: { id: 'query'} %>
+  <%= f.input :search, placeholder: 'Find A Restaurant', input_html: { id: 'query'}, label: false %>
   <%= f.button :submit, class: "button-large",  id: 'btn-search' %>
   </div>
 <% end %>
