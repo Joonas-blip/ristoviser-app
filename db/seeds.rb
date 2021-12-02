@@ -299,7 +299,7 @@ restaurantB1.save!
 
 restaurant = 0
 5.times do
-  note = Note.new(content: 'this is very good', user: User.first, restaurant: Restaurant.all[restaurant], rating: 4, price: '€€')
+  note = Note.new(content: 'this is very good', user: User.first, restaurant: Restaurant.all[restaurant], rating: [3, 4, 5].sample, price: ['€', '€€', '€€€'].sample)
   note.save!
   restaurant += 1
 end
@@ -334,7 +334,7 @@ restaurant = 11
 end
 restaurant = 11
 5.times do
-  note = Note.new(content: 'this is very good', user: User.first, restaurant: Restaurant.all[restaurant], rating: 4, price: '€€')
+  note = Note.new(content: 'this is very good', user: User.first, restaurant: Restaurant.all[restaurant], rating: [3, 4, 5].sample, price: ['€', '€€', '€€€'].sample)
   note.save!
   restaurant += 1
 end
