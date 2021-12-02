@@ -14,7 +14,6 @@ class CollectionRestaurantsController < ApplicationController
           search_result.each do |result|
             photo = retrieve_photo(result)
             restaurant = Restaurant.new(name: result['name'], address: result['formatted_address'], photo: photo)
-            restaurant.save!
             @restaurants << restaurant
           end
           @restaurants
