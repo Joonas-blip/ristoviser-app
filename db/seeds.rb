@@ -335,16 +335,34 @@ end
   x += 1
 end
 
-friend_coll = Collection.new(user: user_two, name: 'Great Chefs', public: true)
-file3 = URI.open('https://www.mastermeeting.it/upload/mastermeeting/hotel-restaurant-trend/hOMESITOMMexecutivechef.jpg')
-friend_coll.photo.attach(io: file3, filename: 'chef.png', content_type: 'image/png')
-friend_coll.save!
-puts 'friend collection created'
 
-friend_rest = CollectionRestaurant.new(restaurant: restaurant8, collection: friend_coll)
-friend_rest.save!
-puts 'added restaurant to collection'
+collection3 = Collection.new(name: 'Amterdam List', user: user_two)
+file1 = URI.open('https://cdn.getyourguide.com/img/location/5ffeb0b587f00.jpeg/88.jpg')
+collection3.photo.attach(io: file1, filename: 'amsterdam.png', content_type: 'image/png')
+collection3.save!
 
-friend_note = Note.new(user: user_two, restaurant: restaurant8, content: 'The best chef in Milan', price: '€€€', rating: 5)
-friend_note.save!
-puts 'added comment to restaurant'
+restaurant = 20
+5.times do
+  collection_restaurants3 = CollectionRestaurant.new(collection: collection3, restaurant: Restaurant.all[restaurant])
+  collection_restaurants3.save!
+  restaurant += 1
+end
+restaurant = 20
+5.times do
+  note = Note.new(content: 'this is very good', user: user_two, restaurant: Restaurant.all[restaurant], rating: [3, 4, 5].sample, price: ['€', '€€', '€€€'].sample)
+  note.save!
+  restaurant += 1
+end
+
+
+x = User.first.id + 6
+5.times do
+  friendship_x = Friendship.new(asker: user_two, receiver: User.find(x), status: "confirmed")
+  friendship_x.save!
+  x += 1
+end
+1.times do
+  friendship6 = Friendship.new(asker: User.find(x), receiver: user_two, status: "pending")
+  friendship6.save!
+  x += 1
+end
