@@ -16,8 +16,9 @@ Restaurant.destroy_all
 
 puts "every data is destroyed"
 
-User.create(email: 'joonas@mail.com', password: '123456', first_name: 'Joonas', last_name: 'Villanen', avatar_url: 'https://ca.slack-edge.com/T02NE0241-U02H7UJ0G1W-6d5b1478977b-72', location: "Milan")
-user_two = User.create(email: 'andrea@mail.com', password: '123456', first_name: 'Andrea', last_name: 'Corbetta', avatar_url: 'https://ca.slack-edge.com/T02NE0241-U02GJP02R18-33fe0961aed4-512', location: "Milan")
+
+User.create(email: 'andrea@mail.com', password: '123456', first_name: 'Andrea', last_name: 'Corbetta', avatar_url: 'https://ca.slack-edge.com/T02NE0241-U02GJP02R18-33fe0961aed4-512', location: "Milan")
+user_two = User.create(email: 'joonas@mail.com', password: '123456', first_name: 'Joonas', last_name: 'Villanen', avatar_url: 'https://ca.slack-edge.com/T02NE0241-U02H7UJ0G1W-6d5b1478977b-72', location: "Milan")
 puts '2 users created'
 
 i = 3
@@ -235,6 +236,56 @@ restaurant20 = Restaurant.new(
   photo: "https://www.italiachiamaitalia.it/wp-content/uploads/2021/05/piadina-salame.jpg"
 )
 restaurant20.save!
+
+restaurantA1 = Restaurant.new(
+  name: "Assaggi",
+  street_address: "Tweede Egelantiersdwarsstraat 6",
+  city: "Amsterdam",
+  country: "Netherlands",
+  phone_number: "+ 31 20 420 5589",
+  photo: "https://static.wixstatic.com/media/75aa5b_0ee02853846c4efba0cc1436ebfcb7d7~mv2.jpg/v1/fill/w_373,h_231,al_c,q_80,usm_0.66_1.00_0.01/75aa5b_0ee02853846c4efba0cc1436ebfcb7d7~mv2.jpg"
+)
+restaurantA1.save!
+
+restaurantA2 = Restaurant.new(
+  name: "Van 't Spit",
+  street_address: "De Clercqstraat 95",
+  city: "Amsterdam",
+  country: "Netherlands",
+  phone_number: "+31 20 358 3878",
+  photo: "https://media-cdn.tripadvisor.com/media/photo-s/10/fe/a8/14/vantspit.jpg"
+)
+restaurantA2.save!
+
+restaurantA3 = Restaurant.new(
+  name: "Takumi Ramen & Yakisoba",
+  street_address: "Scheldestraat 1",
+  city: "Amsterdam",
+  country: "Netherlands",
+  phone_number: "+31 20 238 6071",
+  photo: "https://takumi.ramenkitchen.nl/wp-content/uploads/2019/10/image00010_compressed.jpg"
+)
+restaurantA3.save!
+
+restaurantA4 = Restaurant.new(
+  name: "Cannibale Royale Handboogstraat",
+  street_address: "Handboogstraat 17a",
+  city: "Amsterdam",
+  country: "Netherlands",
+  phone_number: "+31 20 233 7160",
+  photo: "https://cannibaleroyale.nl/wp-content/uploads/2021/06/joeyribs4mp-1333x889.jpg"
+)
+restaurantA4.save!
+
+restaurantA5 = Restaurant.new(
+  name: "LIER",
+  street_address: "Concertgebouwplein 10",
+  city: "Amsterdam",
+  country: "Netherlands",
+  phone_number: "+31 20 573 05 78",
+  photo: "https://studiolinse.com/wp-content/uploads/2017/07/Concertgebouw-01.jpg"
+)
+restaurantA5.save!
 
 restaurant = 0
 5.times do
