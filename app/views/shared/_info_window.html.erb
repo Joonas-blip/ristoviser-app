@@ -1,8 +1,7 @@
 <div class="container_window">
   <%= image_tag restaurant.photo, class: "image_window" %>
-
      <div class="card-name-description">
-        <h6><%= link_to restaurant.name, restaurant_path(restaurant) %></h6>
+        <% friend = @collection ? @collection.user_id : current_user.id %>
+        <h6><%= link_to restaurant.name, restaurant_path(restaurant, friend_id: friend) %></h6>
     </div>
-
 </div>
