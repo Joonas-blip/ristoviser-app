@@ -1,6 +1,8 @@
 <div class="container_window">
   <%= image_tag restaurant.photo, class: "image_window" %>
 
-  <h2 class="title-infobox"><%= link_to restaurant.name, restaurant_path(restaurant[:id]) %></h2>
+     <div class="card-name-description">
+        <h6><%= link_to restaurant.name, restaurant_path(restaurant) %></h6>
+    </div>
 
 </div>
