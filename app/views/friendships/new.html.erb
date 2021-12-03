@@ -36,7 +36,7 @@
             </div>
           <% else %>
             <div class="send-request">
-              <%= link_to 'Add', friendships_path(user), method: :post, class: "button-large", id: "friendship-view" %>
+              <%= link_to 'Add', friendships_path(user: user), method: :post, class: "button-large", id: "friendship-view" %>
             </div>
           <% end %>
         </div>

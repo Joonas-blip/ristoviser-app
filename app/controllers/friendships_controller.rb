@@ -12,11 +12,12 @@ class FriendshipsController < ApplicationController
   end
 
   def create
-    @friendship = Friendship.new(asker: current_user, receiver: User.find(params[:format]))
+    @friendship = Friendship.new(asker: current_user, receiver: User.find(params[:user]))
     unless @friendship.save
       flash[:alert] = "User doesn't exist"
       render :new
     end
+    redirect_to new_friendship_path
     flash[:notice] = "Friend request sent!"
   end
 
