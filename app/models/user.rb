@@ -23,11 +23,6 @@ class User < ApplicationRecord
   end
 
   def friend_of?(user)
-    Friendship.where("(asker_id = :id OR receiver_id = :id) AND status = 'confirmed'",
-    id: user.id)
-              .pluck(:asker_id, :receiver_id)
-              .flatten
-              .uniq
-              .find { |id| id == user.id}
+    self.friends.include? user
   end
 end
