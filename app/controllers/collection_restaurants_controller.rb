@@ -10,9 +10,9 @@ class CollectionRestaurantsController < ApplicationController
 
         if @restaurants.count == 0
           @restaurants = []
-          search_result = query_api(restaurant)
+          search_result = Restaurant.query_api(restaurant)
           search_result.each do |result|
-            photo = retrieve_photo(result)
+            photo = Restaurant.retrieve_photo(result)
             restaurant = Restaurant.new(name: result['name'], address: result['formatted_address'], photo: photo)
             restaurant.save
             @restaurants << restaurant
@@ -28,7 +28,7 @@ class CollectionRestaurantsController < ApplicationController
     collection = Collection.find(params[:collection_id])
     restaurant = Restaurant.find(params[:format])
     @collection_restaurant = CollectionRestaurant.new(collection: collection, restaurant: restaurant)
-    if Note.where("user_id = #{current_user.id} AND restaurant_id = #{restaurant.id}").exists?
+    if Note.where(user_id: current_user.id, restaurant_id: restaurant.id).exists?
       @collection_restaurant.save
       redirect_to collection_path(collection)
     else
@@ -38,32 +38,6 @@ class CollectionRestaurantsController < ApplicationController
   end
 
   private
-
-  def query_api(restaurant)
-    base_url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input="
-    query = restaurant.split
-    query = query.join('%20')
-    url = URI("#{base_url}#{query}&inputtype=textquery&fields=formatted_address%2Cname%2Crating%2Copening_hours%2Cgeometry%2Cphotos&key=AIzaSyC2Ck1pMVEYNxiPnnhDxY6iaQUV5SBmoZg")
-    https = Net::HTTP.new(url.host, url.port)
-    https.use_ssl = true
-    request = Net::HTTP::Get.new(url)
-    response = https.request(request)
-    data = response.body
-    result = JSON.parse(data)
-    result['candidates']
-  end
-
-  def retrieve_photo(search_result)
-    photos = search_result['photos']
-    photo_reference = photos.first['photo_reference']
-    photo_url = URI("https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=#{photo_reference}&key=AIzaSyC2Ck1pMVEYNxiPnnhDxY6iaQUV5SBmoZg")
-    https = Net::HTTP.new(photo_url.host, photo_url.port)
-    https.use_ssl = true
-    request = Net::HTTP::Get.new(photo_url)
-    resp = https.request(request)
-    parse = Nokogiri::HTML(resp.body)
-    parse.search("a").first.attributes["href"].value
-  end
 
   def set_collection
     @collection = Collection.find(params[:collection_id])
