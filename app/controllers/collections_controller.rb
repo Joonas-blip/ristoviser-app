@@ -4,7 +4,7 @@ class CollectionsController < ApplicationController
 
   def index
     @user = current_user
-    @collections = Collection.where("user_id = #{@user.id}")
+    @collections = Collection.where(user_id: @user.id)
   end
 
   def show
