@@ -12,8 +12,8 @@ class User < ApplicationRecord
 
   def friends(status = 'confirmed')
     user_ids = Friendship.where(
-      "(asker_id = :id OR receiver_id = :id) AND status = '#{status}'",
-       id: self.id
+      "(asker_id = :id OR receiver_id = :id) AND status = :status",
+       id: self.id, status: status
     ).pluck(:asker_id, :receiver_id)
      .flatten
      .uniq
