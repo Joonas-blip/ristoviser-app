@@ -7,12 +7,14 @@ class Friendship < ApplicationRecord
   validates :asker, uniqueness: { scope: [:receiver] }
 
   def self.of_status(user, status)
-    Friendship.all.select { |friendship| ( friendship.asker == user || friendship.receiver == user) && friendship.status == status }
-    .pluck(:receiver_id).map { |id| User.find(id) }
+    Friendship.where(
+      "(asker_id = :id OR receiver_id = :id) AND status = :status",
+       id: user.id, status: status
+    ).pluck(:receiver_id).map { |id| User.find(id) }
   end
 
   def self.of_status_pending(user)
-    Friendship.all.select { |friendship|  friendship.receiver == user && friendship.status == 'pending' }
-    .pluck(:asker_id).map { |id| User.find(id) }
+    Friendship.where(receiver_id: user.id, status: 'pending'
+    ).pluck(:asker_id).map { |id| User.find(id) }
   end
 end
