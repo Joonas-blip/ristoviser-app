@@ -6,15 +6,9 @@ class Friendship < ApplicationRecord
   validates :status, inclusion: { in: STATUS }
   validates :asker, uniqueness: { scope: [:receiver] }
 
-  def self.of_status(user, status)
-    Friendship.where(
-      "(asker_id = :id OR receiver_id = :id) AND status = :status",
-       id: user.id, status: status
-    ).pluck(:receiver_id).map { |id| User.find(id) }
-  end
-
   def self.of_status_pending(user)
-    Friendship.where(receiver_id: user.id, status: 'pending'
+    user_ids = Friendship.where(receiver_id: user.id, status: 'pending'
     ).pluck(:asker_id).map { |id| User.find(id) }
+    users = User.where(id: user_ids)
   end
 end
