@@ -8,7 +8,7 @@ class Friendship < ApplicationRecord
 
   def self.of_status_pending(user)
     user_ids = Friendship.where(receiver_id: user.id, status: 'pending'
-    ).pluck(:asker_id).map { |id| User.find(id) }
+    ).pluck(:asker_id)
     users = User.where(id: user_ids)
   end
 end
